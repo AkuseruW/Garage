@@ -1,0 +1,76 @@
+{% for key,voiture in voitures %}
+	<div class="container reveal">
+		{% if key is even %}
+			<div class="voiture-content">
+				<div class="column left">
+					<div class="imgVoitureIndex" style="background-image: url({{ vich_uploader_asset(voiture.imagesVoitures[0], 'imageFile') }})" alt=""></div>
+				</div>
+				<div class="column right">
+					<div class="text">
+						<h2>{{voiture.modelName|upper}}</h2>
+						<ul class="specs__items animate-list animated">
+							<li class="specs__item">
+								<h6 class="specs__item-title">Model Year</h6>
+								<p class="specs__item-value">1977</p>
+							</li>
+
+							<li class="specs__item">
+								<h6 class="specs__item-title">Engine</h6>
+								<p class="specs__item-value">-</p>
+							</li>
+
+							<li class="specs__item">
+								<h6 class="specs__item-title">Transmission</h6>
+								<p class="specs__item-value">5 Speed Manual</p>
+							</li>
+
+							<li class="specs__item">
+								<h6 class="specs__item-title">Steering</h6>
+								<p class="specs__item-value">-</p>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		{% else %}
+		<div class="voiture-content">
+			<div class="column left">
+				<div class="text">
+					<h2>{{voiture.modelName|upper}}</h2>
+					<ul class="specs__items animate-list animated">
+						<li class="specs__item">
+							<h6 class="specs__item-title">Model Year</h6>
+							<p class="specs__item-value">1977</p>
+						</li>
+
+						<li class="specs__item">
+							<h6 class="specs__item-title">Engine</h6>
+							<p class="specs__item-value">-</p>
+						</li>
+
+						<li class="specs__item">
+							<h6 class="specs__item-title">Transmission</h6>
+							<p class="specs__item-value">5 Speed Manual</p>
+						</li>
+
+						<li class="specs__item">
+							<h6 class="specs__item-title">Steering</h6>
+							<p class="specs__item-value">-</p>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+			<div class="column right">
+				<div class="imgVoitureIndex" style="background-image: url({{ vich_uploader_asset(voiture.imagesVoitures[0], 'imageFile') }})" alt=""></div>
+			</div>
+		</div>
+		{% endif %}
+	</div>
+
+
+
+{% endfor %}
+
+

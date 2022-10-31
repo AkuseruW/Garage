@@ -1,0 +1,60 @@
+@import './include/_home';
+@import './include/_nav';
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%;
+}
+
+.site-header {
+    width: 100%;
+    position: fixed;
+    z-index: 800;
+}
+
+.site-banner--bg {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-position: center;
+    background-size: cover;
+}
+
+.banner{
+    height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, .6),rgba(10, 10, 10, .4),rgba(50, 50, 50, .1),rgba(50, 50, 50, .1),rgba(50, 50, 50, .1), rgba(50, 50, 50, .1), rgba(50, 50, 50, .1), rgba(130, 130, 130, .2), rgba(220, 220, 220, 1), rgba(255, 255, 255, 1)), url(/public/images/MetalandGas-Banner-2000x1200.jpg); 
+    background-size: cover; 
+    background-position: center;
+}
+
+.container {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    padding-right: calc(var(--bs-gutter-x) * 9.5);
+    padding-left: calc(var(--bs-gutter-x) * 9.5);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.scroll {
+    background-color: white;
+    color: black;
+  }
+
+/* footer section styling */
+
+footer {
+    padding-top: 1px;
+    height: 20vh;
+    width: 100%;
+    // position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}

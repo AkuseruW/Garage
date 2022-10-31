@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!
+{% endblock %}
+
+{% block body %}
+	<header class="site-header">
+		{% include "/partials/_nav.html.twig" %}
+	</header>
+
+	<section class="banner">
+
+	</section>
+
+	<div id="zoneScroll">
+		{# ------------Voiture show Index------------ #}
+
+		{% include "/partials/_homeVoiture.html.twig" %}
+
+
+		{# ------------footer show Index------------ #}
+		<footer class="site-footer pv-medium animated">
+			{% include "/partials/_footer.html.twig" %}
+		</footer>
+	</div>
+
+{% endblock %}

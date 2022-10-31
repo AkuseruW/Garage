@@ -1,0 +1,21 @@
+vich_uploader:
+    db_driver: orm
+
+    metadata:
+        type: attribute
+
+    mappings:
+        marques:
+            uri_prefix: /images/marques
+            upload_destination: '%kernel.project_dir%/public/images/marques'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true
+        images_voiture:
+           uri_prefix: /images/voitures
+           upload_destination: '%kernel.project_dir%/public/images/voitures'
+           namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+           inject_on_load: false
+           delete_on_update: true
+           delete_on_remove: true

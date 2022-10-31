@@ -1,0 +1,25 @@
+{# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
+{# @var field \EasyCorp\Bundle\EasyAdminBundle\Dto\FieldDto #}
+{# @var entity \EasyCorp\Bundle\EasyAdminBundle\Dto\EntityDto #}
+
+
+{% for value in field.value %}
+    {% set url = ea_url()
+        .setController('App\\Controller\\Admin\\VoituresCrudController')
+        .setAction('removeImagesVoiture')
+        .setEntityId(value.id)
+    %}
+        {# <a href="{{ ea_url().setRoute('admin_business_stats_customer', { id: value.id }) }}"> #}
+		{# <input type="checkbox" name="purchase[]" value="{{value.id}}"> #}
+		    <img src="{{ vich_uploader_asset(value, 'imageFile') }}" width="300px" height="300px">
+			{# <a class="btn btn-danger" href="{{ path('image_delete', {"id": value.id }) }}">Delete</a> #}
+            {# <button type="button" class="btn btn-link btn-link-danger field-collection-delete-button" title="Remove the item">
+                <i class="far fa-trash-alt"></i>
+            </button> #}
+        {# </a> #}
+        {# <pre>
+            {{ dump({url}) }}
+        </pre>
+    <a href="{{url}}">D</a> #}
+
+{% endfor %}
