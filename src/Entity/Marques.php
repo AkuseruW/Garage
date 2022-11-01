@@ -24,13 +24,10 @@ class Marques
     #[ORM\Column(type: 'string')]
     private ?string $imageName = null;
 
-    #[ORM\Column(type: 'integer')]
-    private ?int $imageSize = null;
-
-    #[Vich\UploadableField(mapping: 'marques', fileNameProperty: 'imageName', size: 'imageSize')]
+    #[Vich\UploadableField(mapping: 'marques', fileNameProperty: 'imageName')]
     private ?File $imageFile = null;
 
-    #[ORM\Column(type: 'datetime')]
+    #[ORM\Column(type: 'datetime', nullable:true)]
     private ?\DateTimeInterface $updatedAt = null;
 
     #[ORM\OneToMany(mappedBy: 'marques', targetEntity: Voitures::class, orphanRemoval: true)]
@@ -101,15 +98,15 @@ class Marques
         return $this->imageName;
     }
 
-    public function setImageSize(?int $imageSize): void
-    {
-        $this->imageSize = $imageSize;
-    }
+    // public function setImageSize(?int $imageSize): void
+    // {
+    //     $this->imageSize = $imageSize;
+    // }
 
-    public function getImageSize(): ?int
-    {
-        return $this->imageSize;
-    }
+    // public function getImageSize(): ?int
+    // {
+    //     return $this->imageSize;
+    // }
 
 
 

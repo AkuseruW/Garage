@@ -26,7 +26,7 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linktoRoute('Retour sur le site', 'fa-solid fa-rotate-left', 'homepage');
+        yield MenuItem::linktoRoute('Retour sur le site', 'fa-solid fa-rotate-left', 'home');
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Voitures', 'fa-solid fa-car', Voitures::class);
         yield MenuItem::linkToCrud('Marques', 'fa-solid fa-layer-group', Marques::class);

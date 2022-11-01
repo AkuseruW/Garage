@@ -8,11 +8,10 @@
 		{% include "/partials/_nav.html.twig" %}
 	</header>
 
-	<section class="banner">
+	<section class="banner"></section>
 
-	</section>
-
-	<div id="zoneScroll">
+	<div
+		id="zoneScroll">
 		{# ------------Voiture show Index------------ #}
 
 		{% include "/partials/_homeVoiture.html.twig" %}
@@ -24,4 +23,12 @@
 		</footer>
 	</div>
 
+
+	{% block stylesheets %}
+		{{ encore_entry_link_tags('app') }}
+	{% endblock %}
+
+	{% block javascripts %}
+		{{ encore_entry_script_tags('app') }}
+	{% endblock %}
 {% endblock %}

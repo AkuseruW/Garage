@@ -1,25 +1,38 @@
-{# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
 {# @var field \EasyCorp\Bundle\EasyAdminBundle\Dto\FieldDto #}
 {# @var entity \EasyCorp\Bundle\EasyAdminBundle\Dto\EntityDto #}
+{# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
 
 
-{% for value in field.value %}
-    {% set url = ea_url()
-        .setController('App\\Controller\\Admin\\VoituresCrudController')
-        .setAction('removeImagesVoiture')
-        .setEntityId(value.id)
-    %}
-        {# <a href="{{ ea_url().setRoute('admin_business_stats_customer', { id: value.id }) }}"> #}
-		{# <input type="checkbox" name="purchase[]" value="{{value.id}}"> #}
-		    <img src="{{ vich_uploader_asset(value, 'imageFile') }}" width="300px" height="300px">
-			{# <a class="btn btn-danger" href="{{ path('image_delete', {"id": value.id }) }}">Delete</a> #}
-            {# <button type="button" class="btn btn-link btn-link-danger field-collection-delete-button" title="Remove the item">
-                <i class="far fa-trash-alt"></i>
-            </button> #}
-        {# </a> #}
-        {# <pre>
-            {{ dump({url}) }}
-        </pre>
-    <a href="{{url}}">D</a> #}
+	{% for value in field.value %}
+
+        <img src="{{ vich_uploader_asset(value, 'imageFile') }}" width="300px"height="300px"> 
+        
+        {# {% if has_batch_actions %}
+            <th>
+                <div class="form-check">
+                    <span><input type="checkbox" class="form-check-input form-batch-checkbox-all"></span>
+                </div>
+            </th>
+        {% endif %} #}
+
+        <div id="modal-batch-action" class="modal fade" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h4 id="batch-action-confirmation-title">{{ 'batch_action_modal.title'|trans(domain = 'EasyAdminBundle') }}</h4>
+                        <p>{{ 'batch_action_modal.content'|trans(domain = 'EasyAdminBundle') }}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" data-bs-dismiss="modal" class="btn btn-secondary">
+                            <span class="btn-label">{{ 'action.cancel'|trans(domain = 'EasyAdminBundle') }}</span>
+                        </button>
+                        <button type="button" data-bs-dismiss="modal" class="btn btn-danger" id="modal-batch-action-button">
+                            <i class="fa fa-fw fa-check"></i>
+                            <span class="btn-label">{{ 'batch_action_modal.action'|trans(domain = 'EasyAdminBundle') }}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 {% endfor %}

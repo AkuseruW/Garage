@@ -35,6 +35,24 @@ class Voitures
     #[ORM\JoinColumn(nullable: false)]
     private ?Marques $marques = null;
 
+    #[ORM\Column]
+    private ?int $nbr_propi = null;
+
+    #[ORM\Column]
+    private ?int $puissance = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $cylindre = null;
+
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $description = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $Carburant = null;
+
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    private ?\DateTimeInterface $date = null;
+
     public function __construct()
     {
         $this->imagesVoitures = new ArrayCollection();
@@ -119,6 +137,78 @@ class Voitures
     public function setMarques(?Marques $marques): self
     {
         $this->marques = $marques;
+
+        return $this;
+    }
+
+    public function getNbrPropi(): ?int
+    {
+        return $this->nbr_propi;
+    }
+
+    public function setNbrPropi(int $nbr_propi): self
+    {
+        $this->nbr_propi = $nbr_propi;
+
+        return $this;
+    }
+
+    public function getPuissance(): ?int
+    {
+        return $this->puissance;
+    }
+
+    public function setPuissance(int $puissance): self
+    {
+        $this->puissance = $puissance;
+
+        return $this;
+    }
+
+    public function getCylindre(): ?string
+    {
+        return $this->cylindre;
+    }
+
+    public function setCylindre(string $cylindre): self
+    {
+        $this->cylindre = $cylindre;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function getCarburant(): ?string
+    {
+        return $this->Carburant;
+    }
+
+    public function setCarburant(string $Carburant): self
+    {
+        $this->Carburant = $Carburant;
+
+        return $this;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(\DateTimeInterface $date): self
+    {
+        $this->date = $date;
 
         return $this;
     }
