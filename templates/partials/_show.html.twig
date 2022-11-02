@@ -1,5 +1,3 @@
-
-
 <div class="voiture-content">
 	<div class="column left">
 		<div class="imgVoitureIndex" style="background-image: url({{ vich_uploader_asset(voiture.imagesVoitures[0], 'imageFile') }})" alt=""></div>
@@ -29,7 +27,7 @@
 					<p class="specs__item-value">{{ voiture.carburant }}</p>
 				</li>
 
-                <li class="specs__item">
+				<li class="specs__item">
 					<h6 class="specs__item-title">Prix</h6>
 					<p class="specs__item-value">{{ voiture.prix|format_currency('EUR') }}</p>
 				</li>
@@ -39,7 +37,19 @@
 	</div>
 </div>
 
-	<div class="specs__item">
-		<h6 class="specs__item-title">Description</h6>
-		<p class="specs__item-value">{{ voiture.description|raw }}</p>
+<div class="container description">
+	<div class="descr__item">
+		<h6 class="desc__title">Description</h6>
+		<div class="descr">
+			{{ voiture.description|raw }}
+		</div>
 	</div>
+</div>
+
+<div class="galerie">
+	{% for image in voiture.imagesVoitures %}
+
+		<div class="item" style="background-image: url({{ vich_uploader_asset(image, 'imageFile') }}) " ></div>
+
+	{% endfor %}
+</div>

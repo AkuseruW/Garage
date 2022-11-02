@@ -1,1 +1,24 @@
 {% extends 'base.html.twig' %}
+
+{% block title %}
+    
+{% endblock %}
+
+{% block body %}
+
+
+    <div
+        id="zoneScroll">
+        {# ------------Voiture show ------------ #}
+        {% include "partials/_showVoitures.html.twig" %}
+
+        {# ------------footer show Index------------ #}
+        <footer class="site-footer pv-medium animated">
+            {% include "/partials/_footer.html.twig" %}
+        </footer>
+    </div>
+
+
+
+    {# {{ encore_entry_link_tags('show') }} #}
+{% endblock %}
