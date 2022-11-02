@@ -4,14 +4,10 @@
 {% endblock %}
 
 {% block body %}
-	<header class="site-header">
-		{% include "/partials/_nav.html.twig" %}
-	</header>
 
 	<section class="banner"></section>
 
-	<div
-		id="zoneScroll">
+	<div id="zoneScroll">
 		{# ------------Voiture show Index------------ #}
 
 		{% include "/partials/_homeVoiture.html.twig" %}
@@ -24,11 +20,5 @@
 	</div>
 
 
-	{% block stylesheets %}
-		{{ encore_entry_link_tags('app') }}
-	{% endblock %}
 
-	{% block javascripts %}
-		{{ encore_entry_script_tags('app') }}
-	{% endblock %}
 {% endblock %}
