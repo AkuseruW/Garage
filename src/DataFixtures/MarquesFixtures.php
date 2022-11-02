@@ -17,10 +17,10 @@ class MarquesFixtures extends Fixture
 
         $manager->persist($marques);
         $manager->flush();
+
         $marques = new Marques();
-        
-        $marques->setNom('Porsche')
-            ->setImageName('Porsche-Logo.png');
+        $marques->setNom('BMW')
+            ->setImageName('BMW.svg.webp');
 
         $manager->persist($marques);
         $manager->flush();

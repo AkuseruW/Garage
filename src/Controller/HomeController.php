@@ -16,4 +16,12 @@ class HomeController extends AbstractController
             'voitures' => $voitures->findBy([],$orderBy = null ,$limit=4),
         ]);
     }
+
+    #[Route('/voitures', name: 'voiture')]
+    public function voiture(VoituresRepository $voitures): Response
+    {
+        return $this->render('voitures.html.twig', [
+            'voitures' => $voitures->findAll(),
+        ]);
+    }
 }

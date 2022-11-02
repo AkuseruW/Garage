@@ -2,22 +2,36 @@
 
 namespace App\DataFixtures;
 
-use Doctrine\Bundle\FixturesBundle\Fixture;
-use Doctrine\Persistence\ObjectManager;
+use Faker\Factory;
 use App\Entity\User;
-use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Doctrine\Persistence\ObjectManager;
+use Doctrine\Bundle\FixturesBundle\Fixture;
+
 
 class UserFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        $user = new User();
-        $user->setUsername('Axel')
+        $admin = new User();
+        $admin->setUsername('Axel')
             ->setEmail('axel@admin.com')
             ->setRoles(['ROLE_ADMIN'])
             ->setPassword('$2y$13$JqfLlBHfLs0y4ba3apZmpesfJ1Y4OhfNxSka8vV0y0MueApVZyRsK');
 
-        $manager->persist($user);
+        $manager->persist($admin);
+        $manager->flush();
+
+        
+        $faker = Factory::create('fr_FR');
+        for ($i = 1; $i <= 15; $i++) {
+            $user = new User();
+            $user->setUsername($faker->name())
+                ->setEmail($faker->email())
+                ->setRoles(['ROLE_USER'])
+                ->setPassword($faker->password(10));
+
+            $manager->persist($user);
+        }
         $manager->flush();
     }
 }

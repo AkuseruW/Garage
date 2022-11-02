@@ -9,6 +9,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
@@ -34,8 +35,8 @@ class VoituresCrudController extends AbstractCrudController
     public function configureActions(Actions $actions): Actions
     {
         return $actions
-            // ->add(Crud::PAGE_INDEX, Action::DETAIL)
-            ->addBatchAction(Crud::PAGE_DETAIL, Action::BATCH_DELETE)
+            ->add(Crud::PAGE_INDEX, Action::DETAIL)
+            // ->addBatchAction(Crud::PAGE_DETAIL, Action::BATCH_DELETE)
 
         ;
     }
@@ -60,11 +61,15 @@ class VoituresCrudController extends AbstractCrudController
             TextField::new('cylindre'),
             TextField::new('carburant'),
             DateField::new('date'),
+            SlugField::new('slug')->setTargetFieldName('modelName'),
             TextEditorField::new('description'),
             MoneyField::new('prix')->setCurrency('EUR'),
-            CollectionField::new('ImagesVoitures')->setTemplatePath('admin/collection.html.twig')->onlyOnDetail()->allowDelete(true),
             AssociationField::new('marques')
                 ->setFormTypeOptions(['by_reference' => true,]),
+
+
+
+            // CollectionField::new('ImagesVoitures')->setTemplatePath('admin/collection.html.twig')->onlyOnDetail()->allowDelete(true),
             CollectionField::new('ImagesVoitures')
                 ->setEntryType(ImageType::class)
                 ->onlyOnForms(),

@@ -53,6 +53,9 @@ class Voitures
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date = null;
 
+    #[ORM\Column(length: 100)]
+    private ?string $slug = null;
+
     public function __construct()
     {
         $this->imagesVoitures = new ArrayCollection();
@@ -209,6 +212,18 @@ class Voitures
     public function setDate(\DateTimeInterface $date): self
     {
         $this->date = $date;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

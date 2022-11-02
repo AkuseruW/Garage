@@ -34,18 +34,6 @@ class ImagesVoitures
         return $this->id;
     }
 
-    // public function getNameImage(): ?string
-    // {
-    //     return $this->nameImage;
-    // }
-
-    // public function setNameImage(string $nameImage): self
-    // {
-    //     $this->nameImage = $nameImage;
-
-    //     return $this;
-    // }
-
     public function getVoiture(): ?Voitures
     {
         return $this->voiture;

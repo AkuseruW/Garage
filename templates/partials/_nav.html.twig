@@ -4,7 +4,7 @@
 			<a href="{{ path('home') }}" aria-current="page">Accueil</a>
 		</li>
 		<li id="" class="">
-			<a href="#" aria-current="page">Voitures</a>
+			<a href="{{ path('voiture') }}" aria-current="page">Voitures</a>
 		</li>
 		<li>
 		{% if is_granted('ROLE_USER') %}
