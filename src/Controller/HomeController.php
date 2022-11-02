@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Voitures;
 use App\Repository\VoituresRepository;
+use App\Service\VoitureService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -19,10 +20,10 @@ class HomeController extends AbstractController
     }
 
     #[Route('/voitures', name: 'voiture')]
-    public function voitures(VoituresRepository $voitures): Response
+    public function voitures(VoitureService $voitureService): Response
     {
         return $this->render('voitures.html.twig', [
-            'voitures' => $voitures->findAll(),
+            'voitures' => $voitureService->getPaginated(),
         ]);
     }
 

@@ -1,0 +1,9 @@
+{% for voiture in voitures %}
+    <pre>
+        {{ dump(voiture) }}
+    </pre>
+{% endfor %}
+
+<div class="container">
+    {{ knp_pagination_render(voitures) }}
+</div>

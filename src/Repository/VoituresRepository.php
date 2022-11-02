@@ -2,8 +2,10 @@
 
 namespace App\Repository;
 
+use App\Entity\Marques;
 use App\Entity\Voitures;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -39,28 +41,18 @@ class VoituresRepository extends ServiceEntityRepository
         }
     }
 
-//    /**
-//     * @return Voitures[] Returns an array of Voitures objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('v')
-//            ->andWhere('v.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('v.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    public function findOrPagination(?Marques $marques = null): Query
+    {
+        $qb = $this->createQueryBuilder('v')
+            ->orderBy('v.id','DESC');
 
-//    public function findOneBySomeField($value): ?Voitures
-//    {
-//        return $this->createQueryBuilder('v')
-//            ->andWhere('v.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+        if ($marques){
+            $qb->leftJoin('v.marques', 'm')
+                ->where($qb->expr()->eq('m.id', ':marquesId'))
+                ->setParameter('marquesIf', $marques->getId());
+        }
+
+        return $qb->getQuery();
+    }
+
 }
