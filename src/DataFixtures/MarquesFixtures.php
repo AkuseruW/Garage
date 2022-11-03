@@ -3,26 +3,27 @@
 namespace App\DataFixtures;
 
 use App\Entity\Marques;
-use Doctrine\Bundle\FixturesBundle\Fixture;
+use Faker\Provider\Fakecar;
 use Doctrine\Persistence\ObjectManager;
+use Doctrine\Bundle\FixturesBundle\Fixture;
 
 
 class MarquesFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        $marques = new Marques();
-        $marques->setNom('Porsche')
-            ->setImageName('Porsche-Logo.png');
+        
+        $faker = (new \Faker\Factory())::create();
+        $faker->addProvider(new Fakecar($faker));
 
-        $manager->persist($marques);
-        $manager->flush();
+        for ($i = 1; $i <= 50; $i++) {
+            $marques = new Marques();
+            $marques->setNom($faker->vehicleBrand)
+                ->setImageName('...');
 
-        $marques = new Marques();
-        $marques->setNom('BMW')
-            ->setImageName('BMW.svg.webp');
+            $manager->persist($marques);
+            $manager->flush();
+        }
 
-        $manager->persist($marques);
-        $manager->flush();
     }
 }

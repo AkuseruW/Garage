@@ -1,0 +1,51 @@
+<div class="container">
+
+	<div class="voiture-content">
+
+		<div class="cardCar">
+			<div class="column left">
+				<div class="imgVoitureIndex" style="background-image: url({{ vich_uploader_asset(voiture.imagesVoitures[0], 'imageFile') }})" alt=""></div>
+			</div>
+			<div class="column right">
+				<div class="text">
+					{# <h2>{{voiture.marques|upper}} #}
+						{# {{voiture.modelName|upper}}</h2> #}
+					<ul class="specs__items animate-list animated">
+						<li class="specs__item">
+							<h6 class="specs__item-title">Model année</h6>
+							{# <p class="specs__item-value">{{ voiture.date|date('Y') }}</p> #}
+						</li>
+
+						<li class="specs__item">
+							<h6 class="specs__item-title">Puissance</h6>
+							{# <p class="specs__item-value">{{ voiture.puissance }}</p> #}
+						</li>
+
+						<li class="specs__item">
+							<h6 class="specs__item-title">Transmission</h6>
+							<p class="specs__item-value">5 Speed Manual</p>
+						</li>
+
+						<li class="specs__item">
+							<h6 class="specs__item-title">Carburant</h6>
+							{# <p class="specs__item-value">{{ voiture.carburant }}</p> #}
+						</li>
+
+						<div class="btnView">
+							{# <a class="btn" href="{{ path('voiture_show', {slug: voiture.slug} ) }}">Voir plus</a> #}
+						</div>
+
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+        {{ knp_pagination_render(voitures) }}
+
+	</div>
+
+
+</div>
+
+

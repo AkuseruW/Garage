@@ -15,6 +15,7 @@ class ImageType extends AbstractType
         $builder
             ->add('imageFile', VichFileType::class)
         ;
+        dd($builder);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

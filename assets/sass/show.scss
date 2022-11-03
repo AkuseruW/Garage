@@ -1,13 +1,123 @@
-.description{
-    margin-top: 80px;
-    .descr__item{
-        h6{
+$color_white: #fff;
+$color_grey: #e2e2e2;
+$color_grey_dark: #a2a2a2;
+
+.blog-card {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem auto;
+    // box-shadow: 0 3px 7px -1px rgba(#000, .1);
+    border: 1px solid;
+    margin-bottom: 1.6%;
+    background: $color_white;
+    line-height: 1.4;
+    font-family: sans-serif;
+    overflow: hidden;
+    z-index: 0;
+
+    .meta {
+        position: relative;
+        z-index: 0;
+        height: 200px;
+    }
+
+    .photo {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-size: cover;
+        background-position: center;
+    }
+    
+
+    .description {
+        padding: 1rem;
+        background: $color_white;
+        position: relative;
+        z-index: 1;
+
+        h1,
+        h2 {
+            font-family: Poppins, sans-serif;
+        }
+
+        h1 {
+            line-height: 1;
+            margin: 0;
+            font-size: 1.7rem;
+        }
+
+        h2 {
+            font-size: 1rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            color: $color_grey_dark;
+            margin-top: 5px;
+        }
+
+        .read-more {
+            text-align: right;
+
+            a {
+                display: inline-block;
+                position: relative;
+
+                &:after {
+                    content: "\f061";
+                    font-family: FontAwesome;
+                    margin-left: -10px;
+                    opacity: 0;
+                    vertical-align: middle;
+                    transition: margin .3s, opacity .3s;
+                }
+
+                &:hover:after {
+                    margin-left: 5px;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    p {
+        position: relative;
+        margin: 1rem 0 0;
+    }
+
+
+
+
+    @media (min-width: 640px) {
+        flex-direction: row;
+        max-width: 700px;
+
+        .meta {
+            flex-basis: 40%;
+            height: auto;
+        }
+
+    }
+}
+
+
+
+
+
+
+.description {
+    .descr__item {
+        h6 {
             font-size: 2rem;
             color: #565655;
         }
-        .descr{
+
+        .descr {
             padding-top: 20px;
-            div{
+
+            div {
                 font-weight: 800;
                 color: black;
                 font-family: "Oswald", sans-serif;
@@ -36,6 +146,7 @@
     // margin: 70px auto 0;
     /* background: crimson; */
 }
+
 .item {
     background-position: center;
     width: 500px;
