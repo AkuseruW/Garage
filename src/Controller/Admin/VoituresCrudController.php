@@ -79,7 +79,7 @@ class VoituresCrudController extends AbstractCrudController
 
     public function removeImagesVoiture($id)
     {
-        dd($id);
+        // dd($id);
         // $em->remove($imagesVoiture);
         // $em->flush();
     }

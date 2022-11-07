@@ -3,11 +3,13 @@
 namespace App\Controller;
 
 use App\Entity\Voitures;
-use App\Repository\VoituresRepository;
 use App\Service\VoitureService;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\MarquesRepository;
+use App\Repository\VoituresRepository;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController
 {
@@ -15,23 +17,18 @@ class HomeController extends AbstractController
     public function index(VoituresRepository $voitures): Response
     {
         return $this->render('home.html.twig', [
-            'voitures' => $voitures->findBy([],$orderBy = null ,$limit=4),
+            'voitures' => $voitures->findBy([], $orderBy = null, $limit = 4),
         ]);
     }
 
-    #[Route('/voitures', name: 'voiture')]
-    public function voitures(VoitureService $voitureService): Response
-    {
-        return $this->render('voitures.html.twig', [
-            'voitures' => $voitureService->getPaginated(),
-        ]);
-    }
+    // #[Route('/voitures', name: 'voiture')]
+    // public function voitures(VoitureService $voitureService, MarquesRepository $marques): Response
+    // {
+    //     return $this->render('voitures.html.twig', [
+    //         'marques' => $marques->findAll(),
+    //         'voitures' => $voitureService->getPaginated(),
+    //     ]);
+    // }
 
-    #[Route('/voiture/{slug}', name: 'voiture_show')]
-    public function voitureShow(Voitures $voitures): Response
-    {
-        return $this->render('voitureShow.html.twig', [
-            'voiture' => $voitures
-        ]);
-    }
+    
 }

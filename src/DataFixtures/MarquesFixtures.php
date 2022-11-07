@@ -10,6 +10,9 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 
 class MarquesFixtures extends Fixture
 {
+
+    public const VOITURE_MARQUE_REFERENCE = 'marques';
+
     public function load(ObjectManager $manager): void
     {
         
@@ -24,6 +27,8 @@ class MarquesFixtures extends Fixture
             $manager->persist($marques);
             $manager->flush();
         }
+
+        $this->addReference(self::VOITURE_MARQUE_REFERENCE, $marques);
 
     }
 }
