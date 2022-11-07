@@ -1,0 +1,30 @@
+<aside class="content-wrapper product-list__filters-wrapper">
+	<form  autocomplete="off" class="pl-filters">
+		<div class="pl-filters__search">
+			<divclass="pl-search input-wrapper"><input data-v-a52420fa="" type="text" placeholder="Rechercher une voiture" class="search-input">
+				<span class="search" style="font-size: 20px; height: 20px; width: 20px;"></span>
+			</divclass=>
+		</div>
+
+        <div class="marques">
+            <select class="js-example-disabled-results">
+                {% for marque in marques %}
+                    <option value="{{marque.id}}">{{marque.nom}}</option>               
+                {% endfor %}
+            </select>
+        </div>
+        <pre>
+
+        </pre>
+
+        <div class="btn">
+            <input type="submit" value="Cherchez">
+            <input type="submit" value="Réinitialiser">
+        </div>
+	</form>
+</aside>
+
+
+{# <pre>
+    
+</pre> #}
