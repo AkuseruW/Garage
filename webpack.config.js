@@ -25,6 +25,7 @@ Encore
     .addEntry('log_reg', './assets/sass/log_reg.scss')
     .addEntry('show', './assets/sass/show.scss')
     .addEntry('voitureShow', './assets/sass/voitureShow.scss')
+    .addEntry('voiture_cud', './assets/sass/voitureCrudPages.scss')
     .addEntry('userProfile', './assets/sass/userProfile.scss')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)

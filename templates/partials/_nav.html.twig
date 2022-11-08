@@ -7,25 +7,35 @@
 			<a href="{{ path('voitures_index') }}" aria-current="page">Voitures</a>
 		</li>
 		<li>
-		{% if is_granted('ROLE_USER') %}
-			<a class="nav-link" href="{{ path('app_logout') }}">Deconnexion</a>
-		{% else %}
-			<a class="nav-link" href="{{ path('app_login') }}">Connexion</a>
-		{% endif %}
-		</li>
-		<li>
-		{% if is_granted('ROLE_ADMIN') %}
-			<a href="{{ path('admin') }}">ADMIN</a>
-		{% endif %}
+			{% if is_granted('ROLE_USER') %}
+				<div class="dropdown">   
+					<a class="dropbtn" href="{{ path('user_profile' , {slug: app.user.slug} ) }}">Mon profile</a>
+					<div class="dropdown-content">
+						{% if is_granted('ROLE_ADMIN') %}
+							<a href="{{ path('admin') }}">ADMIN</a>
+						{% endif %}
+						{% if is_granted('ROLE_USER') %}
+							<a class="nav-link" href="{{ path('voitures_create') }}">Vendre une voiture ?</a>
+							<br><td></td>
+							<a class="nav-link" href="{{ path('app_logout') }}">Deconnexion</a>
+						{% endif %}
+					</div>
+				</div>
+
+				{% else %}
+					
+					<a href="{{ path('app_login') }}">Connexion</a>
+			{% endif %}			
+
 		</li>
 
 	</ul>
 
 	{# <a class="toggle-menu js-toggle-menu" href="#">
-			<span class="toggle-menu__line"></span>
-			<span class="toggle-menu__line"></span>
-			<span class="toggle-menu__line"></span>
-			<span class="toggle-menu__line"></span>
-			<span class="toggle-menu__line"></span>
-		</a> #}
+				<span class="toggle-menu__line"></span>
+				<span class="toggle-menu__line"></span>
+				<span class="toggle-menu__line"></span>
+				<span class="toggle-menu__line"></span>
+				<span class="toggle-menu__line"></span>
+			</a> #}
 </nav>

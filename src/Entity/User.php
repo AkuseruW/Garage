@@ -2,17 +2,19 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
+use App\Entity\Voitures;
+use Doctrine\ORM\Mapping as ORM;
+use App\Repository\UserRepository;
 use Doctrine\Common\Collections\Collection;
 use Symfony\Component\String\Slugger\AsciiSlugger;
-use App\Repository\UserRepository;
-use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
-use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\HttpFoundation\File\File;
+use Doctrine\Common\Collections\ArrayCollection;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
+#[ORM\HasLifecycleCallbacks]
 #[Vich\Uploadable]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
@@ -52,12 +54,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\PrePersist]
     public function prePersist():void
     {
-        if(empty($this->slug))
-        {
-            $slugger = new AsciiSlugger();
-            $this->slug = $slugger->slug($this->username.''.uniqid());
-
-        }
+        $this->slug = (new AsciiSlugger())->slug($this->username.''.uniqid());
     }
 
     public function getId(): ?int

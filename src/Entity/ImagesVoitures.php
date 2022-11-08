@@ -22,7 +22,7 @@ class ImagesVoitures
     #[ORM\Column(type: 'string')]
     private ?string $imageName = null;
 
-    #[ORM\Column(type: 'datetime')]
+    #[ORM\Column(type: 'datetime', nullable:true)]
     private ?\DateTimeInterface $updatedAt = null;
 
     #[ORM\ManyToOne(inversedBy: 'imagesVoitures')]

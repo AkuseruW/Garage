@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\ImagesVoitures;
 use App\Entity\Voitures;
 use App\Form\VoituresType;
 use App\Service\VoitureService;
@@ -24,7 +25,7 @@ class VoituresController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'voitures_edit', methods: ['GET', 'POST'])]
+    #[Route('/new', name: 'voitures_create', methods: ['GET', 'POST'])]
     public function new(Request $request, VoituresRepository $voituresRepository): Response
     {
         $voiture = new Voitures();
@@ -32,9 +33,24 @@ class VoituresController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $images = $form->get('images')->getData();
+            foreach($images as $image){
+                $file = md5(uniqid()) . '.' .$image->guessExtension();
+                $image->move(
+                    $this->getParameter('images_directory'),
+                    $file
+                );
+
+                $img = new ImagesVoitures();
+                $img->setImageName($file);
+                $voiture->addImagesVoiture($img);
+            }
+
+
             $voituresRepository->save($voiture, true);
 
-            return $this->redirectToRoute('app_voitures_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('voitures_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('voitures/new.html.twig', [
@@ -59,8 +75,21 @@ class VoituresController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $voituresRepository->save($voiture, true);
 
+            $images = $form->get('images')->getData();
+            foreach($images as $image){
+                $file = md5(uniqid()) . '.' .$image->guessExtension();
+                $image->move(
+                    $this->getParameter('images_directory'),
+                    $file
+                );
+
+                $img = new ImagesVoitures();
+                $img->setImageName($file);
+                $voiture->addImagesVoiture($img);
+            }
+
+            $voituresRepository->save($voiture, true);
             return $this->redirectToRoute('app_voitures_index', [], Response::HTTP_SEE_OTHER);
         }
 

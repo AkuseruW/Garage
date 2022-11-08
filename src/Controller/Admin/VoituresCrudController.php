@@ -67,7 +67,7 @@ class VoituresCrudController extends AbstractCrudController
             AssociationField::new('marques')
                 ->setFormTypeOptions(['by_reference' => true,]),
 
-            // CollectionField::new('ImagesVoitures')->setTemplatePath('admin/collection.html.twig')->onlyOnDetail()->allowDelete(true),
+            CollectionField::new('ImagesVoitures')->setTemplatePath('admin/collection.html.twig')->onlyOnDetail()->allowDelete(true),
             // dd(CollectionField::new('ImagesVoitures')),
             CollectionField::new('ImagesVoitures')
                 ->setEntryType(ImageType::class)
