@@ -1,4 +1,26 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <div class="row">
+        <div class="col-4">
+            {{ form_row(form.modelName) }}
+            {{ form_row(form.cylindre) }}
+            {{ form_row(form.carburant) }}
+
+        </div>
+        <div class="col-4">
+            {{ form_row(form.prix) }}
+            {{ form_row(form.marques) }}
+            {{ form_row(form.date) }}
+        </div>
+        <div class="col-4">
+            {{ form_row(form.nbr_propi) }}
+            {{ form_row(form.puissance) }}
+            {{ form_row(form.kilometrage) }}
+        </div>
+        {{ form_row(form.slug) }}
+        {{ form_row(form.description) }}
+        {{ form_row(form.images) }}
+
+    </div>
+{# {{ form_widget(form) }} #}
+<button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
