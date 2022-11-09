@@ -6,6 +6,7 @@ use App\Entity\Marques;
 use App\Entity\Voitures;
 use Symfony\Component\Form\AbstractType;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -55,11 +56,12 @@ class VoituresType extends AbstractType
                 'attr' => ['class' => 'form-control'],
             ])
 
-            ->add('marques', ChoiceType::class, [
-                // 'attr' => ['class' => 'form-control'],
-                'choice_attr' => function (?Marques $marques) {
-                    return $marques ? ['class' => 'category_'.strtolower($marques->getNom())] : [];
-                },
+            ->add('marques', EntityType::class, [
+                'class' => Marques::class ,
+                'attr' => ['class' => 'form-control'],
+                // 'choice_attr' => function (?Marques $marques) {
+                //     return $marques ? ['class' => 'category_'.strtolower($marques->getNom())] : [];
+                // },
             ])
 
             ->add('images', FileType::class, [

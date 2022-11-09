@@ -1,53 +1,44 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Voitures index{% endblock %}
+{% block title %}
+    
+{% endblock %}
 
 {% block body %}
-    <h1>Voitures index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>ModelName</th>
-                <th>Prix</th>
-                <th>Kilometrage</th>
-                <th>Nbr_propi</th>
-                <th>Puissance</th>
-                <th>Cylindre</th>
-                <th>Description</th>
-                <th>Carburant</th>
-                <th>Date</th>
-                <th>Slug</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for voiture in voitures %}
-            <tr>
-                <td>{{ voiture.id }}</td>
-                <td>{{ voiture.modelName }}</td>
-                <td>{{ voiture.prix }}</td>
-                <td>{{ voiture.kilometrage }}</td>
-                <td>{{ voiture.nbrPropi }}</td>
-                <td>{{ voiture.puissance }}</td>
-                <td>{{ voiture.cylindre }}</td>
-                <td>{{ voiture.description }}</td>
-                <td>{{ voiture.Carburant }}</td>
-                <td>{{ voiture.date ? voiture.date|date('Y-m-d') : '' }}</td>
-                <td>{{ voiture.slug }}</td>
-                <td>
-                    <a href="{{ path('app_voitures_show', {'id': voiture.id}) }}">show</a>
-                    <a href="{{ path('app_voitures_edit', {'id': voiture.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="12">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
 
-    <a href="{{ path('app_voitures_new') }}">Create new</a>
+    <div id="section">
+
+        <div class="voiture-content content ">
+
+            <div class="column left">
+
+                <div id="filterMenu">
+                    {% include "partials/filterMenu.html.twig" %}
+                </div>
+
+            </div>
+            <div class="column right">
+        
+                {# ------------Voiture show ------------ #}
+                <div class="voitureCard">
+                    {% include "partials/_showVoitures.html.twig" %}
+                </div>
+
+            </div>
+            {# {{ knp_pagination_render(voitures) }} #}
+
+        </div>
+
+        {# ------------footer show Index------------ #}
+        <footer class="site-footer pv-medium animated">
+            {% include "/partials/_footer.html.twig" %}
+        </footer>
+
+    </div>
+
+
+    
+    {{ encore_entry_link_tags('show') }}
+    {# {{ encore_entry_link_tags('select') }} #}
 {% endblock %}

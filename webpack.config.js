@@ -27,6 +27,7 @@ Encore
     .addEntry('voitureShow', './assets/sass/voitureShow.scss')
     .addEntry('voiture_cud', './assets/sass/voitureCrudPages.scss')
     .addEntry('userProfile', './assets/sass/userProfile.scss')
+    .addEntry('imageDelete', './assets/js/images.js')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')

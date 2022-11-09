@@ -24,7 +24,7 @@ class VoitureService
     {
         $request = $this->requestStack->getMainRequest();
         $page = $request->query->getInt('page', 1);
-        $limit = 2;
+        $limit = 5;
 
         $voituresQuery = $this->voituresRepository->findOrPagination($marques);
 

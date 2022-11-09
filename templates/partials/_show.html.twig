@@ -47,9 +47,11 @@
 </div>
 
 <div class="galerie">
-	{% for image in voiture.imagesVoitures %}
-
-		<div class="item" style="background-image: url({{ vich_uploader_asset(image, 'imageFile') }}) " ></div>
-
-	{% endfor %}
+	<div class="row">
+		{% for image in voiture.imagesVoitures %}
+			<div class="col-3">
+				<img src="{{ vich_uploader_asset(image, 'imageFile') }}" class="w-100"/>
+			</div>
+		{% endfor %}
+	</div>
 </div>

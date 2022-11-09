@@ -73,6 +73,41 @@
                                 <a class="btn btn-info " target="__blank" href="#">Vendre une voiture</a>
                             </div>
                         {% endif %}
+
+
+						{% if user.voitures | length > 0 %}
+								{# <div class="row py-5">
+									{% for voiture in user.voitures %}
+										{% include "partials/_cardCar.html.twig" %}
+										
+									{% endfor %}
+								</div> #}
+								{% for voiture in user.voitures %}
+									<div class="card mb-3" style="max-width: 540px;">
+										<div class="row no-gutters mt-4">
+											<div class="col-md-4">
+											{# <div class="imgVoitureIndex" style="background-image: url({{ vich_uploader_asset(voiture.imagesVoitures[0], 'imageFile') }})" alt=""></div> #}
+												<img src="{{ vich_uploader_asset(voiture.imagesVoitures[0], 'imageFile') }}" class="w-100 h-100"/>
+											</div>
+											<div class="col-md-8">
+												<div class="card-body">
+												{# <pre>
+													{{ dump(voiture) }}
+												</pre> #}
+													<h5 class="card-title">{{voiture.marques}} {{voiture.modelName}}</h5>
+													{# <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> #}
+												</div>
+											</div>
+										</div>
+									</div>
+							{% endfor %}
+						{% else %}
+							<div class="alert alert-warning">
+								<p>
+									<strong>{{user.userName}}</strong> n'a pas encore d'annonce sur le site
+								</p>
+							</div>
+						{% endif %}
                     
                     </div>
 				</div>
@@ -83,3 +118,5 @@
 
 	</div>
 </div>
+
+
