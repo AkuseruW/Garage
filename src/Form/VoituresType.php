@@ -59,9 +59,6 @@ class VoituresType extends AbstractType
             ->add('marques', EntityType::class, [
                 'class' => Marques::class ,
                 'attr' => ['class' => 'form-control'],
-                // 'choice_attr' => function (?Marques $marques) {
-                //     return $marques ? ['class' => 'category_'.strtolower($marques->getNom())] : [];
-                // },
             ])
 
             ->add('images', FileType::class, [

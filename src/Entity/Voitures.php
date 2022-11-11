@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: VoituresRepository::class)]
+#[ORM\Index(name: 'voitures', columns: ['model_name'], flags: ['fulltext'])]
 #[Vich\Uploadable]
 class Voitures
 {
