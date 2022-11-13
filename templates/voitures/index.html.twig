@@ -24,7 +24,7 @@
                 <div class="voitureCard">
                     {% include "partials/_showVoitures.html.twig" %}
                 </div>
-
+                {{ knp_pagination_render(voitures) }}
             </div>
             {# {{ knp_pagination_render(voitures) }} #}
 

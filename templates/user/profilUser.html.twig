@@ -11,8 +11,14 @@
     {# <pre>
         {{ dump(user) }}
     </pre> #}
-    {% include "user/partials/userInfo.html.twig" %}
+    <section id="profil">
+      {% include "user/partials/userInfo.html.twig" %}
+    
+    </section>
 
+    <footer class="site-footer pv-medium animated">
+      {% include "/partials/_footer.html.twig" %}
+		</footer>
 
     {{ encore_entry_link_tags('userProfile') }}
     {{ encore_entry_link_tags('show') }}

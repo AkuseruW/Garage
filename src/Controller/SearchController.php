@@ -52,13 +52,13 @@ class SearchController extends AbstractController
         $query = $request->request->all('form')['query'];
         // dd($query);
         if($query) {
-            $voiture = $repoVoiture->findVoitureByName($query);
+            $voitures = $repoVoiture->findVoitureByName($query);
             $marque = $repoMarque->findMarqueByName($query);
         }
 
         return $this->render('search/index.html.twig', [
-            'voiture' => $voiture,
-            'marque' => $marque
+            'voitures' => $voitures,
+            // 'marque' => $marque
         ]);
     }
 }

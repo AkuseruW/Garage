@@ -104,7 +104,7 @@ class VoituresController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_voitures_delete', methods: ['POST'])]
+    #[Route('delete/{id}', name: 'voitures_delete', methods: ['POST'])]
     #[Security("(is_granted('ROLE_USER') and user === voiture.getUser()) or is_granted('ROLE_ADMIN')", message:"Cette annonce ne vous appartient pas, vous ne pouvez pas la modifier")]
     public function delete(Request $request, Voitures $voiture, VoituresRepository $voituresRepository): Response
     {
@@ -112,7 +112,9 @@ class VoituresController extends AbstractController
             $voituresRepository->remove($voiture, true);
         }
 
-        return $this->redirectToRoute('voitures_index', [], Response::HTTP_SEE_OTHER);
+        // return $this->redirectToRoute('voitures_index', [], Response::HTTP_SEE_OTHER);
+        $referer = $request->headers->get('referer');
+        return new RedirectResponse($referer);
     }
 
     

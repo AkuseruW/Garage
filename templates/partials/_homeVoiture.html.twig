@@ -7,8 +7,12 @@
 				</div>
 				<div class="column right">
 					<div class="text">
-						<h2>{{voiture.marques|upper}}
-							{{voiture.modelName|upper}}</h2>
+
+						<div class="head-text">
+							<h2 class="h1">{{voiture.marques|upper}} {{voiture.modelName|upper}}</h2>
+							<h3 class="mb-tiny txt-upper txt-mid-small">{{ voiture.prix|format_currency('EUR') }}</h3>
+						</div>
+
 						<ul class="specs__items animate-list animated">
 							<li class="specs__item">
 								<h6 class="specs__item-title">Model année</h6>
@@ -41,10 +45,12 @@
 		{% else %}
 			<div class="voiture-content">
 				<div class="column left">
-					<div class="text">
-						<h2>{{voiture.marques|upper}}
-							{{voiture.modelName|upper}}</h2>
-						<ul class="specs__items animate-list animated">
+					<div class="text left_items">
+						<div class="head-text">
+							<h2 class="h1">{{voiture.marques|upper}} {{voiture.modelName|upper}}</h2>
+							<h3 class="mb-tiny txt-upper txt-mid-small">{{ voiture.prix|format_currency('EUR') }}</h3>
+						</div>
+						<ul class="specs__items ">
 							<li class="specs__item">
 								<h6 class="specs__item-title">Model année</h6>
 								<p class="specs__item-value">{{ voiture.date|date('Y') }}</p>

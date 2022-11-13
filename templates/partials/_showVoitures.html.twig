@@ -12,13 +12,11 @@
 
       <p class="read-more">
         <a href="{{ path('voiture_show', {slug: voiture.slug} ) }}">Voir plus</a>
-        <pre>
-            {{ dump(voiture.slug) }}
-        </pre>
+        
       </p>
     </div>
   </div>
 
 {% endfor %}
-{{ knp_pagination_render(voitures) }}
+{# {{ knp_pagination_render(voitures) }} #}
 

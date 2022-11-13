@@ -9,12 +9,10 @@
 				<div class="card">
 					<div class="card-body">
 						<div class="d-flex flex-column align-items-center text-center">
-							<img src="" alt="Admin" class="rounded-circle" width="150">
+							{# <img src="" alt="Admin" class="rounded-circle" width="150"> #}
 							<div class="mt-3">
 								<h4>{{ user.userName }}</h4>
-								
-
-								<button class="btn btn-outline-primary">Message</button>
+								<button class="btn btn-outline-dark">Message</button>
 							</div>
 						</div>
 					</div>
@@ -27,7 +25,7 @@
 							<div class="col-sm-3">
 								<h6 class="mb-0">Nom</h6>
 							</div>
-							<div class="col-sm-9 text-secondary">
+							<div class="col-sm-9">
 								{{user.userName}}
 							</div>
 						</div>
@@ -46,13 +44,13 @@
 								<h6 class="mb-0">Mobile</h6>
 							</div>
 							<div
-								class="col-sm-9 text-secondary">{# (320) 380-4539 #}
+								class="col-sm-9 text-secondary">
 							</div>
 						</div>
 						<hr>
 						<div class="row">
 							<div class="col-sm-12">
-								<a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
+								<a class="btn btn-dark " href="#">Edit</a>
 							</div>
 						</div>
 					</div>
@@ -69,36 +67,29 @@
                             <h3>Voitures en ventes</h3>
                         </div>
                         {% if user is same as (app.user) %}
-                            <div class="col-sm-6">
-                                <a class="btn btn-info " target="__blank" href="#">Vendre une voiture</a>
+                            <div class="col-sm-6 d-flex flex-row-reverse">
+                                <a class="btn btn-dark float-end" target="__blank" href="{{ path('voitures_create') }}">Vendre une voiture</a>
                             </div>
                         {% endif %}
 
 
 						{% if user.voitures | length > 0 %}
-								{# <div class="row py-5">
-									{% for voiture in user.voitures %}
-										{% include "partials/_cardCar.html.twig" %}
-										
-									{% endfor %}
-								</div> #}
 								{% for voiture in user.voitures %}
-									<div class="card mb-3" style="max-width: 540px;">
+									<div class="card mb-3" style="margin-left: 25%;max-width: 540px; margin-top: 15px">
 										<div class="row no-gutters mt-4">
 											<div class="col-md-4">
-											{# <div class="imgVoitureIndex" style="background-image: url({{ vich_uploader_asset(voiture.imagesVoitures[0], 'imageFile') }})" alt=""></div> #}
 												<img src="{{ vich_uploader_asset(voiture.imagesVoitures[0], 'imageFile') }}" class="w-100 h-100"/>
 											</div>
 											<div class="col-md-8">
 												<div class="card-body">
-												{# <pre>
-													{{ dump(voiture) }}
-												</pre> #}
 													<h5 class="card-title">{{voiture.marques}} {{voiture.modelName}}</h5>
-													{# <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> #}
 												</div>
 											</div>
 										</div>
+										.
+										<a href="{{ path('voitures_edit', {slug: voiture.slug}) }}">Modifier</a>
+										{{ include('voitures/partials/_delete_form.html.twig') }}
+										{# <a href="{{ path('voitures_delete', {id: voiture.id}) }}">Supprimer</a> #}
 									</div>
 							{% endfor %}
 						{% else %}
