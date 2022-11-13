@@ -55,4 +55,22 @@ class VoituresRepository extends ServiceEntityRepository
         return $qb->getQuery();
     }
 
+
+    public function findVoitureByName(string $query)
+    {
+        $qb = $this->createQueryBuilder('v');
+        $qb->where(
+                $qb->expr()->andX(
+                    $qb->expr()->orX(
+                        $qb->expr()->like('v.modelName', ':query'),
+                    ),
+                )
+            )
+            ->setParameter('query', '%' . $query . '%')
+        ;
+        return $qb
+            ->getQuery()
+            ->getResult();
+    }
+
 }

@@ -117,7 +117,7 @@ class VoituresController extends AbstractController
 
     
     #[Route('deleteImage/{id}', name: 'voitures_delete_img', methods: ['GET','POST'])]
-    #[Security("(is_granted('ROLE_USER') and user === voiture.getUser()) or is_granted('ROLE_ADMIN')", message:"Cette annonce ne vous appartient pas, vous ne pouvez pas la modifier")]
+    // #[Security("(is_granted('ROLE_USER') and user === voiture.getUser()) or is_granted('ROLE_ADMIN')", message:"Cette annonce ne vous appartient pas, vous ne pouvez pas la modifier")]
     public function deleteImage(ImagesVoitures $image, Request $request, ImagesVoituresRepository $imagesVoituresRepository){
         // $data = json_decode($request->getContent(), true);
         // $data = json_decode($request->getContent(), true);

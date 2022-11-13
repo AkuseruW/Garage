@@ -1,0 +1,23 @@
+{% if app.request.method == 'POST' %}
+    <div>
+        {% if voiture | length == 0 %}
+            <h4>Aucun résulat pour votre recherche.</h4>
+           {% else %}
+               <h3 class="mt-3">Vos résulats de recherche :</h3>
+               {% for voituree in voiture %}
+                   <div class="mt-3 p-3 bg-light border rounded">
+                       {# <a href="{{ path('article_show', {'slug': voituree.slug}) }}"> #}
+                       <pre>
+                        {{ dump(voituree) }}
+                       </pre>
+                              <h6 class="text-dark"><i class="bi bi-arrow-down-right-square-fill text-primary"></i> {{ voituree.modelName }}</h6>
+                              <h6> </h6>
+                              <div class="text-dark small p-1 rounded">
+                                    {# Posté le {{ article.createdAt|format_datetime('medium', 'short') }} par {{ article.author }} #}
+                              </div>
+                       {# </a> #}
+                   </div>
+              {% endfor %}
+          {% endif %}
+     </div>
+{% endif %}
