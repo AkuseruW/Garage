@@ -1,9 +1,13 @@
 {% for key,voiture in voitures %}
 	<div class="container reveal">
+	<pre>
+		{{ dump(voiture) }}
+	</pre>
 		{% if key is even %}
 			<div class="voiture-content">
 				<div class="column left">
-					<div class="imgVoitureIndex" style="background-image: url({{ vich_uploader_asset(voiture.imagesVoitures[0], 'imageFile') }})" alt=""></div>
+					{# <div class="imgVoitureIndex" style="background-image: url({{ vich_uploader_asset(voiture.imagesVoitures[0], 'imageFile') }})" alt=""></div> #}
+					<img src="{{ vich_uploader_asset(voiture.imagesVoitures[0], 'imageFile') }}" class="d-block w-100" alt="..."/>
 				</div>
 				<div class="column right">
 					<div class="text">
@@ -25,15 +29,14 @@
 							</li>
 
 							<li class="specs__item">
-								<h6 class="specs__item-title">Transmission</h6>
-								<p class="specs__item-value">5 Speed Manual</p>
+								<h6 class="specs__item-title">Cylindre</h6>
+								<p class="specs__item-value">{{ voiture.cylindre }}</p>
 							</li>
 
 							<li class="specs__item">
-								<h6 class="specs__item-title">Carburant</h6>
-								<p class="specs__item-value">{{ voiture.carburant }}</p>
+								<h6 class="specs__item-title">Transmission</h6>
+								<p class="specs__item-value">{{ voiture.transmission }}</p>
 							</li>
-
 							<div class="btnView">
 								<a class="btn" href="{{ path('voiture_show', {slug: voiture.slug} ) }}">Voir plus</a>
 							</div>
@@ -62,13 +65,13 @@
 							</li>
 
 							<li class="specs__item">
-								<h6 class="specs__item-title">Transmission</h6>
-								<p class="specs__item-value">5 Speed Manual</p>
+								<h6 class="specs__item-title">Cylindre</h6>
+								<p class="specs__item-value">{{ voiture.cylindre }}</p>
 							</li>
 
 							<li class="specs__item">
-								<h6 class="specs__item-title">Carburant</h6>
-								<p class="specs__item-value">{{ voiture.carburant }}</p>
+								<h6 class="specs__item-title">Transmission</h6>
+								<p class="specs__item-value">{{ voiture.transmission }}</p>
 							</li>
 
 							<div class="btnView">
@@ -79,7 +82,7 @@
 					</div>
 				</div>
 				<div class="column right">
-					<div class="imgVoitureIndex" style="background-image: url({{ vich_uploader_asset(voiture.imagesVoitures[0], 'imageFile') }})" alt=""></div>
+					{# <img src="{{ vich_uploader_asset(voiture.imagesVoitures[0], 'imageFile') }}" class="d-block w-100" alt="..."/> #}
 				</div>
 			</div>
 		{% endif %}

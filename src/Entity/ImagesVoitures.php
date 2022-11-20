@@ -29,6 +29,11 @@ class ImagesVoitures
     #[ORM\JoinColumn(nullable: false)]
     private ?Voitures $voiture = null;
 
+    // public function __toString(){
+    //     return $this->imageName;
+    //     return $this->imageFile;
+    // }
+
     public function getId(): ?int
     {
         return $this->id;

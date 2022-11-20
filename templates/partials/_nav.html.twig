@@ -1,41 +1,58 @@
-<nav class="header__menu">
-	<ul class="menu">
-		<li id="" class="">
-			<a href="{{ path('home') }}" aria-current="page">Accueil</a>
-		</li>
-		<li id="" class="">
-			<a href="{{ path('voitures_index') }}" aria-current="page">Voitures</a>
-		</li>
-		<li>
-			{% if is_granted('ROLE_USER') %}
-				<div class="dropdown">   
-					<a class="dropbtn" href="{{ path('user_profile' , {slug: app.user.slug} ) }}">Mon profile</a>
-					<div class="dropdown-content">
+<nav class="navbar navbar-expand-lg navbar-light header__menu">
+	<!-- Container wrapper -->
+	<div
+		class="container-fluid">
+		<!-- Toggle button -->
+		<button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarCenteredExample" aria-controls="navbarCenteredExample" aria-expanded="false" aria-label="Toggle navigation">
+			<i class="fas fa-bars"></i>
+		</button>
+
+		<!-- Collapsible wrapper -->
+		<div class="collapse navbar-collapse justify-content-center " id="navbarCenteredExample">
+			<!-- Left links -->
+			<ul class="navbar-nav mb-2 mb-lg-0">
+				<li class="nav-item">
+				<a class="nav-link " aria-current="page" href="{{ path('home') }}">Accueil</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('voitures_index') }}">Voitures</a>
+				</li>
+				<!-- Navbar dropdown -->
+				{% if is_granted('ROLE_USER') %}
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+						{{app.user.username}}
+					</a>
+					<!-- Dropdown menu -->
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<li>
+							<a class="dropdown-item" href="{{ path('user_profile' , {slug: app.user.slug} ) }}">Profil</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="{{ path('voitures_create') }}">Vendre une Voiture</a>
+						</li>
+						<li><hr class="dropdown-divider"/></li>
 						{% if is_granted('ROLE_ADMIN') %}
-							<a href="{{ path('admin') }}">ADMIN</a>
+							<li>
+								<a class="dropdown-item" href="{{ path('admin') }}">ADMIN</a>
+							</li>
 						{% endif %}
-						{% if is_granted('ROLE_USER') %}
-							<a class="nav-link" href="{{ path('voitures_create') }}">Vendre une voiture ?</a>
-							<br><td></td>
-							<a class="nav-link" href="{{ path('app_logout') }}">Deconnexion</a>
-						{% endif %}
-					</div>
-				</div>
-
+							<li>
+								<a class="dropdown-item" href="{{ path('app_logout') }}">Logout</a>
+							</li>
+					</ul>
+				</li>
 				{% else %}
-					
-					<a href="{{ path('app_login') }}">Connexion</a>
-			{% endif %}			
-
-		</li>
-
-	</ul>
-
-	{# <a class="toggle-menu js-toggle-menu" href="#">
-				<span class="toggle-menu__line"></span>
-				<span class="toggle-menu__line"></span>
-				<span class="toggle-menu__line"></span>
-				<span class="toggle-menu__line"></span>
-				<span class="toggle-menu__line"></span>
-			</a> #}
+					<li class="nav-item">
+						<a class="nav-link" href="{{ path('app_login') }}">Connexion</a>
+					</li>
+				{% endif %}		
+				
+			</ul>
+			<!-- Left links -->
+		</div>
+		<!-- Collapsible wrapper -->
+	</div>
+	<!-- Container wrapper -->
 </nav>
+

@@ -10,6 +10,7 @@ use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class ImageType extends AbstractType
 {
+    /************* multi image via easy admin  *************/
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder

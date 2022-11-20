@@ -38,25 +38,33 @@ class VoituresController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
+            // ? upload de l'image //
             $images = $form->get('images')->getData();
+            
             foreach($images as $image){
+                // ? modification du nom du fichier et deplacement dans le dossier images //
                 $file = md5(uniqid()) . '.' .$image->guessExtension();
                 $image->move(
                     $this->getParameter('images_directory'),
                     $file
                 );
-
+                // ! enregistrement de l'image dans la table Image et link avec la voiture associe //
                 $img = new ImagesVoitures();
                 $img->setImageName($file);
                 $voiture->addImagesVoiture($img);
             }
-
+            // ! link avec le user connecte et enregistrement de la voiture via le repo //
             $voiture->setUser($this->getUser());
             $voituresRepository->save($voiture, true);
 
+            $this->addFlash(
+                'success',
+                "La voiture <strong>{$voiture->getMarques()} {$voiture->getModelName()}</strong> a bien été ajoutée"
+            );
             return $this->redirectToRoute('voitures_index', [], Response::HTTP_SEE_OTHER);
         }
-
+        
+        
         return $this->renderForm('voitures/new.html.twig', [
             'voiture' => $voiture,
             'form' => $form,
@@ -81,23 +89,31 @@ class VoituresController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
+            // ? verification et upload des images //
             $images = $form->get('images')->getData();
             foreach($images as $image){
+                // ? modification du nom du fichier et deplacement dans le dossier images //
                 $file = md5(uniqid()) . '.' .$image->guessExtension();
                 $image->move(
                     $this->getParameter('images_directory'),
                     $file
                 );
 
+                // ! enregistrement de l'image dans la table Image et link avec la voiture associe //
                 $img = new ImagesVoitures();
                 $img->setImageName($file);
                 $voiture->addImagesVoiture($img);
             }
 
+            // ! enregistrement de la voiture via le repo //
             $voituresRepository->save($voiture, true);
             return $this->redirectToRoute('voitures_index', [], Response::HTTP_SEE_OTHER);
         }
 
+        $this->addFlash(
+            'success',
+            "La voiture <strong>{$voiture->getMarques()} {$voiture->getModelName()}</strong> a bien été modifiée"
+        );
         return $this->renderForm('voitures/edit.html.twig', [
             'voiture' => $voiture,
             'form' => $form,
@@ -108,11 +124,13 @@ class VoituresController extends AbstractController
     #[Security("(is_granted('ROLE_USER') and user === voiture.getUser()) or is_granted('ROLE_ADMIN')", message:"Cette annonce ne vous appartient pas, vous ne pouvez pas la modifier")]
     public function delete(Request $request, Voitures $voiture, VoituresRepository $voituresRepository): Response
     {
+        // ! recuperation du token et verification de la validite //
         if ($this->isCsrfTokenValid('delete'.$voiture->getId(), $request->request->get('_token'))) {
+            // ! recuperation de l'element via l'id et suppression //
             $voituresRepository->remove($voiture, true);
         }
 
-        // return $this->redirectToRoute('voitures_index', [], Response::HTTP_SEE_OTHER);
+        // redirection sur la meme page //
         $referer = $request->headers->get('referer');
         return new RedirectResponse($referer);
     }
@@ -124,16 +142,16 @@ class VoituresController extends AbstractController
         // $data = json_decode($request->getContent(), true);
         // $data = json_decode($request->getContent(), true);
         
-        //vérification validite token
+        // ! recuperation du token et verification de la validite //
         if($this->isCsrfTokenValid('delete'.$image->getId(), $request->request->get('_token'))){
-            
+            // ! recuperation du nom de l'image et supprssion du dossier image //
             $nom = $image->getImageName();
             unlink($this->getParameter('images_directory').'/'.$nom);
             
-            //supprime l'entrée de la base
+            // ! supprime l'entrée de la base //
             $imagesVoituresRepository->remove($image, true);  
             
-            //redirection sur la meme page
+            //redirection sur la meme page //
             $referer = $request->headers->get('referer');
             return new RedirectResponse($referer);
             

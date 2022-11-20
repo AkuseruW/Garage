@@ -49,7 +49,7 @@ class VoituresRepository extends ServiceEntityRepository
         if ($marques){
             $qb->leftJoin('v.marques', 'm')
                 ->where($qb->expr()->eq('m.id', ':marquesId'))
-                ->setParameter('marquesIf', $marques->getId());
+                ->setParameter('marquesId', $marques->getId());
         }
 
         return $qb->getQuery();

@@ -19,7 +19,7 @@ class MarquesFixtures extends Fixture
         $faker = (new \Faker\Factory())::create();
         $faker->addProvider(new Fakecar($faker));
 
-        for ($i = 1; $i <= 50; $i++) {
+        for ($i = 1; $i <= 5; $i++) {
             $marques = new Marques();
             $marques->setNom($faker->vehicleBrand)
                 ->setImageName('...');

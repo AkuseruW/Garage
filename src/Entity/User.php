@@ -48,8 +48,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->voitures = new ArrayCollection();
     }
 
-
-
     #[ORM\PrePersist]
     public function prePersist():void
     {

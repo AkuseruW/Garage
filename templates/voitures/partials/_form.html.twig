@@ -1,4 +1,5 @@
 {{ form_start(form) }}
+
     <div class="row">
         <div class="col-4">
             {{ form_row(form.modelName) }}
@@ -16,14 +17,13 @@
             {{ form_row(form.puissance) }}
             {{ form_row(form.kilometrage) }}
         </div>
-        {{ form_row(form.slug) }}
+        {{ form_row(form.transmission) }}
         {{ form_row(form.description) }}
         {{ form_row(form.images) }}
 
     </div>
 
 
-{# {{ form_widget(form) }} #}
     <button class="btn btn-dark">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
 

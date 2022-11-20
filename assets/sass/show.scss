@@ -1,3 +1,4 @@
+@import "~bootstrap/scss/bootstrap";
 $color_white: #fff;
 $color_grey: #e2e2e2;
 $color_grey_dark: #a2a2a2;
@@ -84,8 +85,6 @@ $color_grey_dark: #a2a2a2;
         }
 
         .read-more {
-            text-align: right;
-
             a {
                 display: inline-block;
                 position: relative;
@@ -112,7 +111,7 @@ $color_grey_dark: #a2a2a2;
 
     @media (min-width: 640px) {
         flex-direction: row;
-        max-width: 700px;
+        max-width: 800px;
 
         .meta {
             flex-basis: 40%;
@@ -157,13 +156,13 @@ $color_grey_dark: #a2a2a2;
     margin-left: auto;
     display: flex;
     #filterMenu{
-        position: fixed;
-        padding: 38px;
-        border: 1px solid black;
+        // position: fixed;
+        // padding: 38px;
+        // border: 1px solid black;
+        padding-top: 20px;
         input{
-            border-radius: 1px;
-            width: 200px;
-            height: 30px;
+            border-radius: 0px !important;
+
             margin-bottom: 5px;
             background-color: white;
             color: #000;
@@ -174,25 +173,20 @@ $color_grey_dark: #a2a2a2;
             background-color: white;
             color: #000;
         }
-        .btn{
-            input{
-                width: 100px;
-                height: 30px;
-                border-radius: 0;
-                background-color: #000;
-                border: #000;
-                color: white;
-                pointer-events: auto !important;
 
-            }
-        }
     }
     .voitureCard{
         width: 85%;
     }
 
 }
-
+#form_recherche{
+    background-color: #000;
+    border-radius: 0;
+    border: #000;
+    width: 100px;
+    // height: 30px;
+}
 .galerie {
     margin-top: 150px;
     display: flex;
@@ -213,7 +207,6 @@ $color_grey_dark: #a2a2a2;
     flex-shrink: 0;
     background-size: 500px;
     background-repeat: no-repeat;
-    // transform: scale(.2);
 }
 
 .pagination{

@@ -20,6 +20,7 @@ class VoitureService
 
     }
 
+    /*********** Pagination ************/
     public function getPaginated(?Marques $marques = null)
     {
         $request = $this->requestStack->getMainRequest();

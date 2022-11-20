@@ -3,7 +3,6 @@
 	id="carouselExampleIndicators" class="carousel slide carousel-fade" data-mdb-ride="carousel">
 	<!-- Slides -->
 	<div class="carousel-inner mb-5">
-
 		{% for image in voiture.imagesVoitures %}
 			{% if loop.index0 == 0 %}
 				<div class="carousel-item active">
@@ -15,7 +14,6 @@
 				</div>
 			{% endif %}
 		{% endfor %}
-    
 	</div>
 	<!-- Slides -->
 
@@ -32,20 +30,10 @@
 
 	<!-- Thumbnails -->
 	<div class="carousel-indicators" style="margin-bottom: -20px;">
-
-    {% for image in voiture.imagesVoitures %}
-			{% if loop.index0 == 0 %}
-      <pre>
-      </pre>
-        <button type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" style="width: 100px;">
-					<img src="{{ vich_uploader_asset(image, 'imageFile') }}" class="d-block w-100" alt="..."/>
-		    </button>
-			{% else %}
-        {{ dump(loop.index) }}
-        <button type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide-to="{{loop.index}}" aria-label="Slide {{loop.index}}" style="width: 100px;">
-			    <img src="{{ vich_uploader_asset(image, 'imageFile') }}" class="d-block w-100" alt="..."/>
-		    </button>
-			{% endif %}
+		{% for image in voiture.imagesVoitures %}
+			<button type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide-to="{{loop.index0}}" {% if loop.first %}  class="active" aria-current="true" {% endif %} aria-label="Slide {{loop.index}}" style="width: 100px;">
+				<img src="{{ vich_uploader_asset(image, 'imageFile') }}" class="d-block w-100" alt="..."/>
+			</button>
 		{% endfor %}
 
 	</div>

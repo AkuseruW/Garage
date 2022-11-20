@@ -20,15 +20,5 @@ class HomeController extends AbstractController
             'voitures' => $voitures->findBy([], $orderBy = null, $limit = 4),
         ]);
     }
-
-    // #[Route('/voitures', name: 'voiture')]
-    // public function voitures(VoitureService $voitureService, MarquesRepository $marques): Response
-    // {
-    //     return $this->render('voitures.html.twig', [
-    //         'marques' => $marques->findAll(),
-    //         'voitures' => $voitureService->getPaginated(),
-    //     ]);
-    // }
-
     
 }

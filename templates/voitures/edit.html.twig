@@ -8,24 +8,25 @@
         <h1>Edit {{voiture.marques}} {{voiture.modelName}}</h1>
 
 
-        {{ include('voitures/_form.html.twig', {'button_label': 'Update'}) }}
-        {{ include('voitures/_delete_form.html.twig') }}
+        {{ include('voitures/partials/_form.html.twig', {'button_label': 'Update'}) }}
+        {{ include('voitures/partials/_delete_form.html.twig') }}
         <a class="p-2" href="{{ path('voitures_index') }}">back to list</a>
         
-        {# {% if app.request.attributes.get('_route') == 'voitures_edit' %} #}
+
             <h2>Images</h2>
             <div class="row">
+
+                {# !affichage et delete des images #}
                 {% for image in voiture.imagesVoitures %}
 
                     <div class="col-3">
                         <img src="{{ vich_uploader_asset(image, 'imageFile') }}" class="w-100"/>
-                        {# <a href="{{ path('voitures_delete_img', {id: image.id}) }}" name="_token" value="{{ csrf_token('delete' ~ voiture.id) }}">Supprimer</a> #}
                         {{ include('voitures/partials/_delete_image.html.twig') }}
                     </div>
 
                 {% endfor %}
             </div>
-        {# {% endif %} #}
+
     </div>
 
     {{ encore_entry_link_tags('voiture_cud') }}

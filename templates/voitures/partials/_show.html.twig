@@ -1,6 +1,6 @@
 <div class="voiture-content">
 	<div class="column left">
-		<div class="imgVoitureIndex" style="background-image: url({{ vich_uploader_asset(voiture.imagesVoitures[0], 'imageFile') }})" alt=""></div>
+	{% include "voitures/partials/_carousel.html.twig" %}
 	</div>
 	<div class="column right">
 		<div class="text">
@@ -46,12 +46,4 @@
 	</div>
 </div>
 
-<div class="galerie">
-	<div class="row">
-		{% for image in voiture.imagesVoitures %}
-			<div class="col-3">
-				<img src="{{ vich_uploader_asset(image, 'imageFile') }}" class="w-100"/>
-			</div>
-		{% endfor %}
-	</div>
-</div>
+

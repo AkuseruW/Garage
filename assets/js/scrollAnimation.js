@@ -1,14 +1,15 @@
 const header = document.querySelector('.site-header')
 const zone = document.querySelector('#zoneScroll')
-let ul = document.querySelector('.menu').querySelectorAll('li')
+const nav = document.querySelector('.header__menu')
+// let ul = document.querySelector('.menu').querySelectorAll('li')
 // console.log(ul)
 window.addEventListener('scroll',e=>{
     let color = ""
     const pos = zone.offsetTop-200
-    if(pos-header.offsetHeight<window.scrollY) color = "white"
+    if(pos-nav.offsetHeight<window.scrollY) color = "black"
     
-    header.style.backgroundColor  = color
-
+    nav.style.backgroundColor  = color
+    // nav.style.backgroundColor = "black"
 })
 
 

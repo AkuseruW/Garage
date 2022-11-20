@@ -86,10 +86,11 @@
 												</div>
 											</div>
 										</div>
-										.
-										<a href="{{ path('voitures_edit', {slug: voiture.slug}) }}">Modifier</a>
-										{{ include('voitures/partials/_delete_form.html.twig') }}
-										{# <a href="{{ path('voitures_delete', {id: voiture.id}) }}">Supprimer</a> #}
+										<div class="controlCardUserP">
+											<a href="{{ path('voitures_edit', {slug: voiture.slug}) }}">Modifier</a>
+											{{ include('voitures/partials/_delete_form.html.twig') }}
+										</div>
+										
 									</div>
 							{% endfor %}
 						{% else %}

@@ -7,10 +7,11 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\String\Slugger\AsciiSlugger;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: VoituresRepository::class)]
+#[ORM\HasLifecycleCallbacks]
 #[ORM\Index(name: 'voitures', columns: ['model_name'], flags: ['fulltext'])]
 #[Vich\Uploadable]
 class Voitures
@@ -60,9 +61,18 @@ class Voitures
     #[ORM\ManyToOne(inversedBy: 'voitures')]
     private ?User $user = null;
 
+    #[ORM\Column(length: 50, nullable:true)]
+    private ?string $transmission = null;
+
     public function __construct()
     {
         $this->imagesVoitures = new ArrayCollection();
+    }
+
+    #[ORM\PrePersist]
+    public function prePersist():void
+    {
+        $this->slug = (new AsciiSlugger())->slug($this->modelName.''.uniqid());
     }
 
     public function getId(): ?int
@@ -240,6 +250,18 @@ class Voitures
     public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getTransmission(): ?string
+    {
+        return $this->transmission;
+    }
+
+    public function setTransmission(string $transmission): self
+    {
+        $this->transmission = $transmission;
 
         return $this;
     }

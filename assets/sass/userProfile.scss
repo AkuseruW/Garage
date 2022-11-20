@@ -55,9 +55,40 @@
     padding-top: 6rem;
 }
 
-button{
-    background-color: red;
-    border: none;
-    color: white;
-    padding: 8px;
+
+.controlCardUserP{
+    display: flex;
+    justify-content: center;
+    a{
+        color: rgb(58, 58, 189);
+        padding: 8px;
+        text-decoration: none;
+    }
+    a:hover{
+        color: rgb(151, 151, 73);
+    }
+    button{
+        background: none;
+        border: none;
+        color: red;
+        padding: 8px;
+    }
+    button:hover{
+        color: rgb(168, 99, 99);
+    }
+}
+
+ul {
+    .nav-item {
+        padding-left: 50px;
+        a {
+            font-size: 1.6rem;
+            padding: 20px;
+            color: white !important;
+        }
+        
+        .dropdown-item{
+            color: black !important;
+        }
+    }
 }

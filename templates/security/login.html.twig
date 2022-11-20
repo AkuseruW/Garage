@@ -5,46 +5,10 @@
 
 {% block body %}
 
-
-	{% include "/partials/_nav.html.twig" %}
-
-
-	{# <form method="post">
-		{% if error %}
-			<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-		{% endif %}
-
-		{% if app.user %}
-			<div class="mb-3">
-				You are logged in as
-				{{ app.user.userIdentifier }},
-				<a href="{{ path('app_logout') }}">Logout</a>
-			</div>
-		{% endif %}
-
-		<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-		<label for="inputUsername">Username</label>
-		<input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" autocomplete="username" required autofocus>
-		<label for="inputPassword">Password</label>
-		<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-
-		<input
-		type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"> #}
-
-		{#
-				        
-				    #}
-
-		{# <button class="btn btn-lg btn-primary" type="submit">
-			Sign in
-		</button>
-
-	</form> #}
-
 	<section>
 		<div class="container">
 			<div class="form">
-                <h2>Connexion</h2>
+				<h2>Connexion</h2>
 				<form method="post" class="connection">
 					{% if error %}
 						<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -57,33 +21,49 @@
 							<a href="{{ path('app_logout') }}">Logout</a>
 						</div>
 					{% endif %}
-					<div class="inputBox">
-                        <input type="text" value="{{ last_username }}" name="username" id="inputUsername" placeholder="Nom d'utilisateur" class="form-control" autocomplete="username" required autofocus>
-					</div>
-                    
-					<div class="inputBox">
-                        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Mot de passe" autocomplete="current-password" required>    
+
+					<!-- Email input -->
+					<div class="form-outline mb-4">
+						<input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" autocomplete="username" required autofocus>
+						<label class="form-label" for="form2Example1">Nom d'utilisateur</label>
 					</div>
 
-                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+					<!-- Password input -->
+					<div class="form-outline mb-4">
+						<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+						<label class="form-label" for="form2Example2">Mot de passe</label>
+					</div>
 
-                    {# Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-                    See https://symfony.com/doc/current/security/remember_me.html #}
-				
-                    <div class="checkbox mb-3">
-                        <label>
-                            <input type="checkbox" name="_remember_me"> Remember me
-                        </label>
-                    </div>
+					<input
+					type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+					{# Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+					See https://symfony.com/doc/current/security/remember_me.html #}
+
+					
+					<div class="col d-flex ">
+						<!-- Checkbox -->
+						<div class="form-check">
+							<input type="checkbox" name="_remember_me">
+							<label class="form-check-label" for="form2Example31">
+								Remember me
+							</label>
+						</div>
+					</div>
+
 					<input type="submit" class="btn" name="formlogin" id="formlogin" value="Connexion" required>
-					<p class="forget">Mot de passe oublié ? <a href="forget_pass.php">Cliquez ici</a></p>
+					<p class="forget">Mot de passe oublié ?
+						<a href="forget_pass.php">Cliquez ici</a>
+					</p>
 					<p class="forget">Vous n'avez pas de compte ?
 						<a href="{{ path('app_register') }}">S'inscrire</a>
 					</p>
+					<!-- Register buttons -->
+					
+
 				</form>
 			</div>
 		</div>
 	</section>
 
-    {{ encore_entry_link_tags('log_reg') }}
-{% endblock %}
+{{ encore_entry_link_tags('log_reg') }}{% endblock %}

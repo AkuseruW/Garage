@@ -22,4 +22,15 @@
 
     {{ encore_entry_link_tags('userProfile') }}
     {{ encore_entry_link_tags('show') }}
+
+    <script>
+      const form = document.querySelector('#delete')
+      const submit = document.querySelector('#submit')
+      console.log(submit)
+
+      submit.addEventListener("click", function () {
+        form.submit();
+      });
+    </script>
+    
 {% endblock %}

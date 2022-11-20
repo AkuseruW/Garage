@@ -1,127 +1,110 @@
 @import './include/_home';
 @import './include/_nav';
+@import '~mdb-ui-kit/css/mdb.min.css';
 
 
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-html, body{
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
 .site-header {
-    width: 100%;
-    position: fixed;
-    z-index: 800;
+  width: 100%;
+  position: fixed;
+  z-index: 800;
 }
 
 .site-banner--bg {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-position: center;
-    background-size: cover;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-position: center;
+  background-size: cover;
 }
 
-.banner{
-    height: 100vh;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, .6),rgba(10, 10, 10, .4),rgba(50, 50, 50, .1),rgba(50, 50, 50, .1),rgba(50, 50, 50, .1), rgba(50, 50, 50, .1), rgba(50, 50, 50, .1), rgba(130, 130, 130, .2), rgba(220, 220, 220, 1), rgba(255, 255, 255, 1)), url(/public/images/MetalandGas-Banner-2000x1200.jpg); 
-    background-size: cover; 
-    background-position: center;
+.banner {
+  height: 100vh;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, .6), rgba(10, 10, 10, .4), rgba(50, 50, 50, .1), rgba(50, 50, 50, .1), rgba(50, 50, 50, .1), rgba(50, 50, 50, .1), rgba(50, 50, 50, .1), rgba(130, 130, 130, .2), rgba(220, 220, 220, 1), rgba(255, 255, 255, 1)), url(/public/images/MetalandGas-Banner-2000x1200.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .container {
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 0;
-    padding-right: calc(var(--bs-gutter-x) * 9.5);
-    padding-left: calc(var(--bs-gutter-x) * 9.5);
-    margin-right: auto;
-    margin-left: auto;
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  padding-right: calc(var(--bs-gutter-x) * 9.5);
+  padding-left: calc(var(--bs-gutter-x) * 9.5);
+  margin-right: auto;
+  margin-left: auto;
 }
 
 
 .scroll {
-    background-color: white;
-    color: black;
+  background-color: white;
+  color: black;
 }
 
 /* footer section styling */
 
 footer {
-    margin-top: 8rem;
-    padding-top: 1px;
-    width: 100%;
-    // position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
+  margin-top: 8rem;
+  padding-top: 1px;
+  width: 100%;
+  // position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
 }
 
 
-.btnView{
-    margin-top: 50px;
-    .btn{
-        display: inline-block;
-        position: relative;
-        background: #000;
-        border: none;
-        z-index: 1;
-        cursor: pointer;
-        text-align: center;
-        color: #fff;
-        text-decoration: none;
-        padding: 15px 21px;
-        // font-family: "ff-good-web-pro","Arial",sans-serif;
-        // font-weight: 600;
-        // text-transform: uppercase;
-        // letter-spacing: .25em;
-        // line-height: 140%;
-    }
+
+
+.left_items {
+  padding-left: 0;
+  padding-right: 50px;
 }
 
-.left_items{
-    padding-left: 0;
-    padding-right: 50px;
-}
 .specs__items {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
 }
 
-ol, ul {
-    box-sizing: border-box;
+ol,
+ul {
+  box-sizing: border-box;
 }
 
-.specs__item {
-    display: flex;
-    flex-direction: column;
-    border-bottom: 2px solid #e6e6e6;
-}
 
-.specs__item {
-    width: 46%;
-}
 
 .animations-enabled .animate-list.animated li {
-    transform: translateY(0px);
-    opacity: 1;
+  transform: translateY(0px);
+  opacity: 1;
 }
 
 .animations-enabled .animate-list.animated li:nth-child(1) {
-    transition: transform cubic-bezier(0.51, 0.56, 0.31, 0.87) .625s 0s, opacity cubic-bezier(0.51, 0.56, 0.31, 0.87) .625s 0s;
+  transition: transform cubic-bezier(0.51, 0.56, 0.31, 0.87) .625s 0s, opacity cubic-bezier(0.51, 0.56, 0.31, 0.87) .625s 0s;
 }
 
-.pb-mini, .specs__item, .specs__item-title {
-    padding-bottom: 20px;
-}
+// .pb-mini,
+// .specs__item,
+// .specs__item-title {
+//   // padding-bottom: 20px;
+// }
 
-p, .gform_wrapper .gform_description, li, cite, address {
-    line-height: 180%;
+p,
+.gform_wrapper .gform_description,
+li,
+cite,
+address {
+  line-height: 180%;
 }
 
 @import url(https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;700&display=swap);
@@ -131,26 +114,26 @@ p, .gform_wrapper .gform_description, li, cite, address {
 
 
 @media screen and (max-width: 768px) {
-    html {
-        font-size:15px
-    }
+  html {
+    font-size: 15px
+  }
 }
 
 @media screen and (max-width: 465px) {
-    html {
-        font-size:14px
-    }
+  html {
+    font-size: 14px
+  }
 }
 
-footer{
-    background-color: black;
+footer {
+  background-color: black;
 }
 
 .container {
-    max-width: 1110px;
-    margin: 0 auto;
-    position: relative;
-    padding: 2rem;
+  max-width: 1110px;
+  margin: 0 auto;
+  position: relative;
+  padding: 2rem;
 }
 
 .copyright {
@@ -162,8 +145,8 @@ footer{
   border-top: 1px solid white;
 }
 
-.footer-nav{
-    padding: 1rem 0
+.footer-nav {
+  padding: 1rem 0
 }
 
 .footer-nav .col {
@@ -190,58 +173,58 @@ p.site-decription {
   height: 1.5rem;
 }
 
-.flex{
+.flex {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.flex-start{
+.flex-start {
   align-items: flex-start;
 }
 
-.flex-jc-start{
+.flex-jc-start {
   justify-content: flex-start;
 }
 
-.flex-around{
+.flex-around {
   justify-content: space-around;
 }
 
-.flex-column{
+.flex-column {
   flex-direction: column;
 }
 
-.flex-g-1{
+.flex-g-1 {
   gap: 1rem;
 }
 
-.col{
+.col {
   flex: 1;
 }
 
-.col-list ul li{
+.col-list ul li {
   list-style: none;
 }
 
-.col-list ul li a{
+.col-list ul li a {
   text-decoration: none;
   color: white;
   transition: all 0.25s ease 0s;
 }
 
 .col-list ul li a:hover,
-.col-list ul li a:focus{
+.col-list ul li a:focus {
   color: white;
   text-decoration: underline
 }
 
-.nav_title{
-    color: white;
+.nav_title {
+  color: white;
 }
 
-@media screen and (max-width: 1100px){
-  .footer-nav{
+@media screen and (max-width: 1100px) {
+  .footer-nav {
     flex-direction: column
   }
 }

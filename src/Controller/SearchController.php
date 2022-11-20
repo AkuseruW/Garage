@@ -45,12 +45,12 @@ class SearchController extends AbstractController
 
     /**
      * @param Request $request
+     * 
     */
     #[Route('/handleSearch', name: 'handleSearch')]
     public function handleSearch(Request $request, VoituresRepository $repoVoiture, MarquesRepository $repoMarque)
     {
         $query = $request->request->all('form')['query'];
-        // dd($query);
         if($query) {
             $voitures = $repoVoiture->findVoitureByName($query);
             $marque = $repoMarque->findMarqueByName($query);
@@ -58,7 +58,6 @@ class SearchController extends AbstractController
 
         return $this->render('search/index.html.twig', [
             'voitures' => $voitures,
-            // 'marque' => $marque
         ]);
     }
 }

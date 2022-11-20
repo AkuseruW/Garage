@@ -64,13 +64,10 @@ class VoituresCrudController extends AbstractCrudController
             SlugField::new('slug')->setTargetFieldName('modelName'),
             TextEditorField::new('description'),
             MoneyField::new('prix')->setCurrency('EUR'),
+            
             AssociationField::new('marques')
                 ->setFormTypeOptions(['by_reference' => true,]),
-
-            CollectionField::new('ImagesVoitures')->setTemplatePath('admin/collection.html.twig')->onlyOnDetail()->allowDelete(true),
-            // AssociationField::new('User')->setFormType(),
             CollectionField::new('User')->setTemplatePath('admin/collection.html.twig')->onlyOnDetail()->allowDelete(true),
-            // dd(CollectionField::new('ImagesVoitures')),
             CollectionField::new('ImagesVoitures')
                 ->setEntryType(ImageType::class)
                 ->onlyOnForms(),

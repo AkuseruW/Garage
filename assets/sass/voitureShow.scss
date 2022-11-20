@@ -1,5 +1,19 @@
 @import "~bootstrap/scss/bootstrap";
 
+.site-header {
+    top: 0;
+    background-color: #000;
+    nav{
+        ul{
+            li{
+                a{
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
 .description {
     .descr__item {
         h6 {
@@ -42,5 +56,4 @@
     flex-shrink: 0;
     background-size: 500px;
     background-repeat: no-repeat;
-    // transform: scale(.2);
 }
