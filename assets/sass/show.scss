@@ -3,11 +3,17 @@ $color_white: #fff;
 $color_grey: #e2e2e2;
 $color_grey_dark: #a2a2a2;
 
+
+.voiture-content{
+    min-height: 100vh;
+}
+
 .voiture-content .left {
     width: 20%;
 }
 .voiture-content .right {
     width: 70%;
+    
 }
 
 .site-header {
