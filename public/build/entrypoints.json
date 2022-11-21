@@ -1,0 +1,75 @@
+{
+  "entrypoints": {
+    "app": {
+      "js": [
+        "/build/runtime.188fa053.js",
+        "/build/198.bf05fc7e.js",
+        "/build/620.96b4fa5b.js",
+        "/build/app.530a12d0.js"
+      ],
+      "css": [
+        "/build/620.d48dde61.css",
+        "/build/app.e3bd403b.css"
+      ]
+    },
+    "select": {
+      "js": [
+        "/build/runtime.188fa053.js",
+        "/build/select.76c8ca6d.js"
+      ]
+    },
+    "log_reg": {
+      "js": [
+        "/build/runtime.188fa053.js",
+        "/build/log_reg.393c4e17.js"
+      ],
+      "css": [
+        "/build/log_reg.eff0f6a9.css"
+      ]
+    },
+    "show": {
+      "js": [
+        "/build/runtime.188fa053.js",
+        "/build/show.37986098.js"
+      ],
+      "css": [
+        "/build/show.20b3f1f2.css"
+      ]
+    },
+    "voitureShow": {
+      "js": [
+        "/build/runtime.188fa053.js",
+        "/build/voitureShow.3f133277.js"
+      ],
+      "css": [
+        "/build/voitureShow.133b458c.css"
+      ]
+    },
+    "voiture_cud": {
+      "js": [
+        "/build/runtime.188fa053.js",
+        "/build/voiture_cud.62201fb7.js"
+      ],
+      "css": [
+        "/build/voiture_cud.0882ef03.css"
+      ]
+    },
+    "userProfile": {
+      "js": [
+        "/build/runtime.188fa053.js",
+        "/build/userProfile.8609b1cb.js"
+      ],
+      "css": [
+        "/build/userProfile.387e8b36.css"
+      ]
+    },
+    "imageDelete": {
+      "js": [
+        "/build/runtime.188fa053.js",
+        "/build/198.bf05fc7e.js",
+        "/build/765.736eb011.js",
+        "/build/imageDelete.29bf2ede.js"
+      ]
+    }
+  }
+}
