@@ -10,6 +10,8 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 
 class UserFixtures extends Fixture
 {
+    public const USER_REFERENCE = 'user';
+
     public function load(ObjectManager $manager): void
     {
         $admin = new User();
@@ -33,5 +35,7 @@ class UserFixtures extends Fixture
             $manager->persist($user);
         }
         $manager->flush();
+        
+        $this->addReference(self::USER_REFERENCE, $user);
     }
 }

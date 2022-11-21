@@ -1,4 +1,5 @@
 <div class="voiture-content">
+	
 	<div class="column left">
 	{% include "voitures/partials/_carousel.html.twig" %}
 	</div>
@@ -14,12 +15,12 @@
 
 				<li class="specs__item">
 					<h6 class="specs__item-title">Puissance</h6>
-					<p class="specs__item-value">{{ voiture.puissance }}</p>
+					<p class="specs__item-value">{{ voiture.puissance }} kW </p>
 				</li>
 
 				<li class="specs__item">
 					<h6 class="specs__item-title">Transmission</h6>
-					<p class="specs__item-value">5 Speed Manual</p>
+					<p class="specs__item-value">{{ voiture.transmission }}</p>
 				</li>
 
 				<li class="specs__item">
@@ -32,6 +33,20 @@
 					<p class="specs__item-value">{{ voiture.prix|format_currency('EUR') }}</p>
 				</li>
 
+				<li class="specs__item">
+					<h6 class="specs__item-title">Cylindre</h6>
+					<p class="specs__item-value">{{ voiture.cylindre }} L</p>
+				</li>
+
+				<li class="specs__item">
+					<h6 class="specs__item-title">Nombre propi</h6>
+					<p class="specs__item-value">{{ voiture.NbrPropi }}</p>
+				</li>
+
+				<li class="specs__item">
+					<h6 class="specs__item-title">Kilometrage</h6>
+					<p class="specs__item-value">{{ voiture.kilometrage }} KM</p>
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -47,3 +62,9 @@
 </div>
 
 
+{% if voiture.user is same as (app.user) or is_granted('ROLE_ADMIN') %}
+	<div class="controlCardUserP">
+		<a class='btn btn-warning' href="{{ path('voitures_edit', {slug: voiture.slug}) }}">Modifier</a>
+		{{ include('voitures/partials/_delete_form.html.twig')}}
+	</div>
+{% endif %}

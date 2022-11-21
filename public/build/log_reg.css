@@ -1,0 +1,75 @@
+/*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[1]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[4].oneOf[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[3]!./assets/sass/log_reg.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.header__menu {
+  background-color: black;
+}
+
+ul .nav-item {
+  padding-left: 50px;
+}
+ul .nav-item a {
+  font-size: 1.6rem;
+  padding: 20px;
+  color: white !important;
+}
+ul .nav-item .dropdown-item {
+  color: black !important;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  min-height: 70vh;
+}
+
+.container {
+  position: relative;
+  padding-right: 0;
+  padding-left: 0;
+  width: 25rem;
+  min-height: 25rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--card-border-radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.checkbox {
+  margin-top: 26px;
+}
+
+input[type=submit] {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+  background-color: black;
+  color: white;
+}
+
+.form-check {
+  padding-left: 0;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibG9nX3JlZy5jc3MiLCJtYXBwaW5ncyI6Ijs7O0FBSUE7RUFDSTtFQUNBO0FBSEo7O0FBTUE7O0VBRUk7QUFISjs7QUFNQTtFQUNJO0FBSEo7O0FBTUk7RUFDSTtBQUhSO0FBSVE7RUFDSTtFQUNBO0VBQ0E7QUFGWjtBQUtRO0VBQ0k7QUFIWjs7QUFTQTtFQUNJO0VBQ0E7QUFOSjs7QUFTQTtFQUNJO0VBQ0E7RUFDQTtBQU5KOztBQVNBO0VBQ0k7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0FBTko7O0FBU0E7RUFDSTtBQU5KOztBQVNBO0VBQ0k7RUFDQTtFQUNBO0VBQ0E7RUFDQTtBQU5KOztBQVNBO0VBQ0k7QUFOSixDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vLy4vYXNzZXRzL3Nhc3MvbG9nX3JlZy5zY3NzIl0sInNvdXJjZXNDb250ZW50IjpbIi8vIEBpbXBvcnQgXCJ+Ym9vdHN0cmFwL3Njc3MvYm9vdHN0cmFwXCI7XG4vLyBAaW1wb3J0IFwifmJvb3RzdHJhcC9zY3NzL2Jvb3RzdHJhcFwiO1xuXG5cbioge1xuICAgIG1hcmdpbjogMDtcbiAgICBwYWRkaW5nOiAwO1xufVxuXG5odG1sLFxuYm9keSB7XG4gICAgaGVpZ2h0OiAxMDAlO1xufVxuXG4uaGVhZGVyX19tZW51e1xuICAgIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xufVxudWwge1xuICAgIC5uYXYtaXRlbSB7XG4gICAgICAgIHBhZGRpbmctbGVmdDogNTBweDtcbiAgICAgICAgYSB7XG4gICAgICAgICAgICBmb250LXNpemU6IDEuNnJlbTtcbiAgICAgICAgICAgIHBhZGRpbmc6IDIwcHg7XG4gICAgICAgICAgICBjb2xvcjogd2hpdGUgIWltcG9ydGFudDtcbiAgICAgICAgfVxuICAgICAgICBcbiAgICAgICAgLmRyb3Bkb3duLWl0ZW17XG4gICAgICAgICAgICBjb2xvcjogYmxhY2sgIWltcG9ydGFudDtcbiAgICAgICAgfVxuICAgIH1cbn1cblxuLy8gLyogU1RZTEUgR0VORVJBTCBERSBMQSBQQUdFICovXG4uY29udGFpbmVyIHtcbiAgICB3aWR0aDogODAlO1xuICAgIG1hcmdpbjogMCBhdXRvO1xufVxuXG5zZWN0aW9uIHtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgbWluLWhlaWdodDogNzB2aDtcbn1cblxuLmNvbnRhaW5lciB7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIHBhZGRpbmctcmlnaHQ6IDA7XG4gICAgcGFkZGluZy1sZWZ0OiAwO1xuICAgIHdpZHRoOiAyNXJlbTtcbiAgICBtaW4taGVpZ2h0OiAyNXJlbTtcbiAgICBiYWNrZ3JvdW5kOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMSk7XG4gICAgYm9yZGVyLXJhZGl1czogdmFyKC0tY2FyZC1ib3JkZXItcmFkaXVzKTtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDVweCk7XG4gICAgYm94LXNoYWRvdzogMCAyNXB4IDQ1cHggcmdiYSgwLCAwLCAwLCAwLjEpO1xuICAgIGJvcmRlcjogMXB4IHNvbGlkIHJnYmEoMjU1LCAyNTUsIDI1NSwgMC41KTtcbiAgICBib3JkZXItcmlnaHQ6IDFweCBzb2xpZCByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMik7XG4gICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIHJnYmEoMjU1LCAyNTUsIDI1NSwgMC4yKTtcbn1cblxuLmNoZWNrYm94IHtcbiAgICBtYXJnaW4tdG9wOiAyNnB4O1xufVxuXG5pbnB1dFt0eXBlPVwic3VibWl0XCJdIHtcbiAgICBtYXJnaW4tdG9wOiAxLjI1cmVtO1xuICAgIG1hcmdpbi1ib3R0b206IDEuMjVyZW07XG4gICAgZm9udC1zaXplOiAxcmVtO1xuICAgIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xuICAgIGNvbG9yOiB3aGl0ZTtcbn1cblxuLmZvcm0tY2hlY2t7XG4gICAgcGFkZGluZy1sZWZ0OiAwO1xufSJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==*/

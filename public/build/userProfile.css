@@ -1,0 +1,93 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[1]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[4].oneOf[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[3]!./assets/sass/userProfile.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************/
+.main-body {
+  padding: 15px;
+}
+
+.card {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0 solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1rem;
+}
+
+.gutters-sm {
+  margin-right: -8px;
+  margin-left: -8px;
+}
+
+.gutters-sm > .col,
+.gutters-sm > [class*=col-] {
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+.mb-3,
+.my-3 {
+  margin-bottom: 1rem !important;
+}
+
+.bg-gray-300 {
+  background-color: #e2e8f0;
+}
+
+.h-100 {
+  height: 100% !important;
+}
+
+.shadow-none {
+  box-shadow: none !important;
+}
+
+#profil {
+  padding-top: 6rem;
+}
+
+.controlCardUserP {
+  display: flex;
+  justify-content: center;
+}
+.controlCardUserP a {
+  color: rgb(58, 58, 189);
+  padding: 8px;
+  text-decoration: none;
+}
+.controlCardUserP a:hover {
+  color: rgb(151, 151, 73);
+}
+.controlCardUserP button {
+  background: none;
+  border: none;
+  color: red;
+  padding: 8px;
+}
+.controlCardUserP button:hover {
+  color: rgb(168, 99, 99);
+}
+
+ul .nav-item {
+  padding-left: 50px;
+}
+ul .nav-item a {
+  font-size: 1.6rem;
+  padding: 20px;
+  color: white !important;
+}
+ul .nav-item .dropdown-item {
+  color: black !important;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidXNlclByb2ZpbGUuY3NzIiwibWFwcGluZ3MiOiI7OztBQUFBO0VBQ0k7QUFDSjs7QUFFQTtFQUNJO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0FBQ0o7O0FBSUE7RUFDSTtFQUNBO0VBQ0E7QUFESjs7QUFJQTtFQUNJO0VBQ0E7QUFESjs7QUFJQTs7RUFFSTtFQUNBO0FBREo7O0FBSUE7O0VBRUk7QUFESjs7QUFJQTtFQUNJO0FBREo7O0FBSUE7RUFDSTtBQURKOztBQUlBO0VBQ0k7QUFESjs7QUFJQTtFQUNJO0FBREo7O0FBS0E7RUFDSTtFQUNBO0FBRko7QUFHSTtFQUNJO0VBQ0E7RUFDQTtBQURSO0FBR0k7RUFDSTtBQURSO0FBR0k7RUFDSTtFQUNBO0VBQ0E7RUFDQTtBQURSO0FBR0k7RUFDSTtBQURSOztBQU1JO0VBQ0k7QUFIUjtBQUlRO0VBQ0k7RUFDQTtFQUNBO0FBRlo7QUFLUTtFQUNJO0FBSFosQyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL2Fzc2V0cy9zYXNzL3VzZXJQcm9maWxlLnNjc3MiXSwic291cmNlc0NvbnRlbnQiOlsiLm1haW4tYm9keSB7XG4gICAgcGFkZGluZzogMTVweDtcbn1cblxuLmNhcmQge1xuICAgIGJveC1zaGFkb3c6IDAgMXB4IDNweCAwIHJnYmEoMCwgMCwgMCwgLjEpLCAwIDFweCAycHggMCByZ2JhKDAsIDAsIDAsIC4wNik7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICBtaW4td2lkdGg6IDA7XG4gICAgd29yZC13cmFwOiBicmVhay13b3JkO1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XG4gICAgYmFja2dyb3VuZC1jbGlwOiBib3JkZXItYm94O1xuICAgIGJvcmRlcjogMCBzb2xpZCByZ2JhKDAsIDAsIDAsIC4xMjUpO1xuICAgIGJvcmRlci1yYWRpdXM6IC4yNXJlbTtcblxufVxuXG5cbi5jYXJkLWJvZHkge1xuICAgIGZsZXg6IDEgMSBhdXRvO1xuICAgIG1pbi1oZWlnaHQ6IDFweDtcbiAgICBwYWRkaW5nOiAxcmVtO1xufVxuXG4uZ3V0dGVycy1zbSB7XG4gICAgbWFyZ2luLXJpZ2h0OiAtOHB4O1xuICAgIG1hcmdpbi1sZWZ0OiAtOHB4O1xufVxuXG4uZ3V0dGVycy1zbT4uY29sLFxuLmd1dHRlcnMtc20+W2NsYXNzKj1jb2wtXSB7XG4gICAgcGFkZGluZy1yaWdodDogOHB4O1xuICAgIHBhZGRpbmctbGVmdDogOHB4O1xufVxuXG4ubWItMyxcbi5teS0zIHtcbiAgICBtYXJnaW4tYm90dG9tOiAxcmVtICFpbXBvcnRhbnQ7XG59XG5cbi5iZy1ncmF5LTMwMCB7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2UyZThmMDtcbn1cblxuLmgtMTAwIHtcbiAgICBoZWlnaHQ6IDEwMCUgIWltcG9ydGFudDtcbn1cblxuLnNoYWRvdy1ub25lIHtcbiAgICBib3gtc2hhZG93OiBub25lICFpbXBvcnRhbnQ7XG59XG5cbiNwcm9maWx7XG4gICAgcGFkZGluZy10b3A6IDZyZW07XG59XG5cblxuLmNvbnRyb2xDYXJkVXNlclB7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICBhe1xuICAgICAgICBjb2xvcjogcmdiKDU4LCA1OCwgMTg5KTtcbiAgICAgICAgcGFkZGluZzogOHB4O1xuICAgICAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG4gICAgfVxuICAgIGE6aG92ZXJ7XG4gICAgICAgIGNvbG9yOiByZ2IoMTUxLCAxNTEsIDczKTtcbiAgICB9XG4gICAgYnV0dG9ue1xuICAgICAgICBiYWNrZ3JvdW5kOiBub25lO1xuICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICAgIGNvbG9yOiByZWQ7XG4gICAgICAgIHBhZGRpbmc6IDhweDtcbiAgICB9XG4gICAgYnV0dG9uOmhvdmVye1xuICAgICAgICBjb2xvcjogcmdiKDE2OCwgOTksIDk5KTtcbiAgICB9XG59XG5cbnVsIHtcbiAgICAubmF2LWl0ZW0ge1xuICAgICAgICBwYWRkaW5nLWxlZnQ6IDUwcHg7XG4gICAgICAgIGEge1xuICAgICAgICAgICAgZm9udC1zaXplOiAxLjZyZW07XG4gICAgICAgICAgICBwYWRkaW5nOiAyMHB4O1xuICAgICAgICAgICAgY29sb3I6IHdoaXRlICFpbXBvcnRhbnQ7XG4gICAgICAgIH1cbiAgICAgICAgXG4gICAgICAgIC5kcm9wZG93bi1pdGVte1xuICAgICAgICAgICAgY29sb3I6IGJsYWNrICFpbXBvcnRhbnQ7XG4gICAgICAgIH1cbiAgICB9XG59Il0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9*/
