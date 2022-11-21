@@ -1,8 +1,5 @@
 {% for key,voiture in voitures %}
 	<div class="container reveal">
-	<pre>
-		{{ dump(voiture) }}
-	</pre>
 		{% if key is even %}
 			<div class="voiture-content">
 				<div class="column left">
@@ -82,7 +79,7 @@
 					</div>
 				</div>
 				<div class="column right">
-					{# <img src="{{ vich_uploader_asset(voiture.imagesVoitures[0], 'imageFile') }}" class="d-block w-100" alt="..."/> #}
+					<img src="{{ vich_uploader_asset(voiture.imagesVoitures[0], 'imageFile') }}" class="d-block w-100" alt="..."/>
 				</div>
 			</div>
 		{% endif %}

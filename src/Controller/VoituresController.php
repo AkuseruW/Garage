@@ -144,6 +144,7 @@ class VoituresController extends AbstractController
         
         // ! recuperation du token et verification de la validite //
         if($this->isCsrfTokenValid('delete'.$image->getId(), $request->request->get('_token'))){
+            
             // ! recuperation du nom de l'image et supprssion du dossier image //
             $nom = $image->getImageName();
             unlink($this->getParameter('images_directory').'/'.$nom);
