@@ -73,7 +73,7 @@ class VoituresFixtures extends Fixture
                     '1966-Shelby-GT350H-002-1080.jpg','1966-Shelby-GT350H-003-1080.jpg','1966-Shelby-GT350H-004-1080.jpg'
                     );
                 }else {
-                    $voitures->setModelName('Alfa Romeo, mets moi 70% +');
+                    $voitures->setModelName('Alfa Romeo');
                     $images = array('1969-Alfa-Romeo-Junior-Z-001-1080.jpg','1969-Alfa-Romeo-Junior-Z-002-1080.jpg',
                     '1969-Alfa-Romeo-Junior-Z-004-1080.jpg','1969-Alfa-Romeo-Junior-Z-006-1080.jpg'
                     );
